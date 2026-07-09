@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Sterling — Freelance Copywriter</title>
+<meta name="description" content="Freelance copywriter for web design agencies. Website copy, email sequences, and bilingual (EN/ES) content built to drop straight into client builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F5F2EA;
+    --paper-dim: #EDE9DE;
+    --ink: #1C2333;
+    --ink-soft: #4A5064;
+    --navy: #1C2333;
+    --navy-2: #262E42;
+    --gold: #A8792A;
+    --gold-bright: #C79A3E;
+    --oxblood: #7A2E2E;
+    --rule: rgba(28,35,51,0.14);
+    --rule-light: rgba(245,242,234,0.18);
+    --max: 920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-bright);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,242,234,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max);
+  }
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;}
+  .brand span{color:var(--gold);}
+  nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0;}
+  nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft);}
+  nav a:hover{color:var(--ink);}
+  .navlinks{display:flex;}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:104px 0 88px; position:relative;}
+  .hero .label{display:block; margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    line-height:1.05;
+    max-width:11ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero p.sub{
+    max-width:52ch;
+    margin-top:26px;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+  }
+  .hero-cta{
+    margin-top:38px;
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.82rem;
+    letter-spacing:0.05em;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:2px;
+    display:inline-block;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--gold); transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* dividing rule with tick */
+  .rule{
+    border:none; height:1px; background:var(--rule); margin:0;
+  }
+  .section{padding:76px 0;}
+  .section-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:14px;
+  }
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);}
+  .section-intro{max-width:60ch; color:var(--ink-soft); margin-bottom:48px;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:56px; align-items:start;
+  }
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid p{margin:0 0 18px; color:var(--ink-soft);}
+  .about-grid p strong{color:var(--ink); font-weight:600;}
+  .fact-list{list-style:none; margin:38px 0 0; padding:0; border-top:1px solid var(--rule);}
+  .fact-list li{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:14px 0; border-bottom:1px solid var(--rule);
+    font-size:0.95rem;
+  }
+  .fact-list li span:first-child{color:var(--ink-soft);}
+  .fact-list li span:last-child{font-family:'JetBrains Mono', monospace; font-size:0.85rem; text-align:right;}
+
+  /* ---------- WORK SAMPLES ---------- */
+  .sample{
+    border-top:1px solid var(--rule);
+    padding:40px 0;
+  }
+  .sample:last-child{border-bottom:1px solid var(--rule);}
+  .sample-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:20px; cursor:pointer;
+  }
+  .sample-head-left{flex:1;}
+  .sample-tag{margin-bottom:10px;}
+  .sample-head h3{font-size:1.4rem; margin-bottom:8px;}
+  .sample-head p{margin:0; color:var(--ink-soft); font-size:0.98rem; max-width:56ch;}
+  .toggle-icon{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.3rem; color:var(--gold);
+    flex-shrink:0; width:28px; text-align:center;
+    transition:transform 0.25s ease;
+    user-select:none;
+  }
+  .sample[data-open="true"] .toggle-icon{transform:rotate(45deg);}
+
+  .sample-body{
+    max-height:0; overflow:hidden;
+    transition:max-height 0.4s ease;
+  }
+  .sample-inner{
+    display:grid; grid-template-columns: 1fr 240px; gap:36px;
+    padding-top:28px;
+  }
+  @media (max-width:760px){ .sample-inner{grid-template-columns:1fr;} }
+
+  .copy-block{
+    background:#fff;
+    border:1px solid var(--rule);
+    padding:28px 30px;
+    font-size:0.98rem;
+    position:relative;
+  }
+  .copy-block h4{font-family:'Fraunces',serif; font-size:1.15rem; font-weight:600; margin:0 0 12px;}
+  .copy-block p{margin:0 0 14px; color:var(--ink);}
+  .copy-block p:last-child{margin-bottom:0;}
+  .copy-block .cta-line{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.82rem;
+    color:var(--oxblood);
+    margin-top:16px;
+  }
+  .lang-toggle{
+    display:inline-flex; gap:2px; margin-bottom:16px;
+    border:1px solid var(--rule); border-radius:2px; overflow:hidden;
+  }
+  .lang-toggle button{
+    font-family:'JetBrains Mono', monospace; font-size:0.75rem;
+    padding:6px 12px; border:none; background:var(--paper-dim); cursor:pointer;
+    color:var(--ink-soft);
+  }
+  .lang-toggle button.active{background:var(--ink); color:var(--paper);}
+
+  .annotation{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    line-height:1.55;
+    color:var(--gold);
+    padding-left:18px;
+    border-left:2px solid var(--gold);
+    align-self:start;
+    position:relative;
+  }
+  .annotation::before{
+    content:"NOTE";
+    display:block;
+    color:var(--oxblood);
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    margin-bottom:8px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  @media (max-width:700px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper); padding:28px 26px;}
+  .service-card .label{display:block; margin-bottom:14px;}
+  .service-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .service-card p{margin:0; color:var(--ink-soft); font-size:0.92rem;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--navy); color:var(--paper); padding:80px 0 40px;}
+  footer .label{color:var(--gold-bright);}
+  footer h2{color:var(--paper); font-size:clamp(1.8rem,4vw,2.8rem); max-width:14ch; margin-top:18px;}
+  footer p{color:rgba(245,242,234,0.72); max-width:48ch; margin-top:20px;}
+  .contact-links{margin-top:36px; display:flex; flex-wrap:wrap; gap:14px;}
+  footer .btn-primary{background:var(--gold); color:var(--navy);}
+  footer .btn-primary:hover{background:var(--gold-bright);}
+  footer .btn-ghost{border-color:rgba(245,242,234,0.4); color:var(--paper);}
+  footer .btn-ghost:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .footer-bottom{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--rule-light);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.82rem; color:rgba(245,242,234,0.5);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Angel Sterling <span>/ copy</span></div>
+    <ul class="navlinks">
+      <li><a href="#work">My Writing</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">Freelance Copywriter — Est. 2026</span>
+    <h1>Words your <em>designs</em> deserve.</h1>
+    <p class="sub">I write website copy, email sequences, and bilingual (EN/ES) content for the clients web design agencies build for — so your team can stay focused on design, not drafts.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work">See My Samples</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<section style="background:var(--navy); padding:36px 0;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div>
+      <span class="label" style="color:var(--gold-bright);">Currently Available</span>
+      <h3 style="color:var(--paper); font-size:1.4rem; margin-top:8px;">I'm actively taking on new client work — one-off or ongoing.</h3>
+    </div>
+    <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="label">About</span>
+        <h2 style="margin-top:14px; margin-bottom:22px; font-size:clamp(1.6rem,3.4vw,2.2rem);">I write the copy so you don't have to chase it.</h2>
+        <p>Most agencies lose time on the same bottleneck: the design is ready, the build is ready, and the project stalls waiting on client copy. <strong>I'm the writer you send that problem to.</strong></p>
+        <p>I write homepage and service-page copy, FAQs, and email nurture sequences built to drop straight into a build — structured with clear headings, no rewrite required. I also write bilingual English/Spanish content at full parity, not a machine-translated afterthought.</p>
+        <p>Every sample below was written the way a real client project works: a business, an audience, and a page that has to earn a call or a signup — not just read well.</p>
+      </div>
+      <ul class="fact-list">
+        <li><span>Specialty</span><span>Web copy for local &amp; service businesses</span></li>
+        <li><span>Languages</span><span>English / Español</span></li>
+        <li><span>Formats</span><span>Homepage · Service pages · Email · FAQ</span></li>
+        <li><span>Delivery</span><span>Structured docs, ready to build</span></li>
+        <li><span>Turnaround</span><span>Scoped per project</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head"><span class="label">01 — My Writing</span></div>
+    <h2 style="margin-bottom:14px;">Four samples. Four different jobs the copy has to do.</h2>
+    <p class="section-intro">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
+
+    <!-- SAMPLE 1 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">Home Services · Homepage + About Us</span>
+          <h3>Stillwater Noble Tree Care</h3>
+          <p>Tree service homepage and founder-driven about page — two jobs, two different techniques.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <div class="lang-toggle">
+              <button class="active" onclick="showVariant(this,'home')">Homepage</button>
+              <button onclick="showVariant(this,'about')">About Us</button>
+            </div>
+            <div class="variant-home">
+              <h4>Before You Spend Thousands Removing a Tree, Get a Professional Second Opinion</h4>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Professional Tree Service for Homes and Businesses Throughout Payne County — Free Estimates • Local Arborists • Fully Insured</p>
+              <p>Stillwater Noble Tree Care provides tree trimming, tree pruning, tree removal, crown thinning, and storm cleanup services throughout Stillwater and Payne County.</p>
+              <p>Many homeowners assume a problem tree needs to be removed. Sometimes that's true. But many trees can be safely preserved through professional pruning and corrective care—saving homeowners thousands of dollars while protecting the beauty and value of their property.</p>
+              <p>Our goal isn't to sell the biggest project possible. Our goal is to recommend the right solution. Whether you need routine maintenance, emergency storm cleanup, or complete tree removal, you'll receive honest recommendations, professional workmanship, and results you'll notice immediately.</p>
+
+              <h4 style="margin-top:20px;">What Your Property Looks Like After We Leave</h4>
+              <p>Most people don't realize how much their trees are hiding—until the work is done. It's not subtle. It's the kind of change your neighbors notice first.</p>
+              <p><strong>Your Lawn Turns Greener</strong> — Years of heavy shade can thin out grass. Once we open the canopy, sunlight reaches the ground again. Within weeks, bare patches often begin filling in.</p>
+              <p><strong>Your Home Feels Brighter Inside</strong> — Windows that stayed dark all morning suddenly let in light. Rooms feel larger. You may not need to turn on a lamp until late afternoon.</p>
+              <p><strong>Your View Comes Back</strong> — Whether you face a pond, a garden, or simply open sky, proper tree pruning restores the view. No more looking through a tangled mass of overgrown branches.</p>
+              <p><strong>Your Curb Appeal Improves</strong> — Healthy, well-shaped trees make a property look cared for and inviting. Step across the street after we finish and you'll notice the difference immediately.</p>
+
+              <h4 style="margin-top:20px;">Why Homeowners Choose Noble Tree Care</h4>
+              <p><strong>Most tree companies can cut down a tree. Far fewer know when a tree should be saved.</strong></p>
+              <p>Many homeowners call us after receiving recommendations for expensive tree removals. Sometimes removal is necessary. Sometimes a tree simply needs proper pruning, crown thinning, or corrective care. We've met homeowners who were told healthy trees needed removal. We've seen people spend money on unnecessary work because nobody took the time to explain their options.</p>
+              <p><strong>We believe tree care starts with honest advice. Our job isn't to sell the biggest project. Our job is to recommend the right solution for your property.</strong> That means giving honest advice, explaining your options, and helping you make an informed decision.</p>
+              <p>When you work with Noble Tree Care, you get: ISA-certified expertise, fully insured professionals, honest recommendations, clear communication from start to finish, respect for your property, thorough cleanup after every job, and safe, professional equipment and procedures.</p>
+              <p>If a tree can be saved, we'll tell you. If it needs to come down, we'll explain why. Either way, you'll know exactly what work is being performed and exactly what you're paying for.</p>
+
+              <h4 style="margin-top:20px;">Our Services</h4>
+              <p><strong>Tree Pruning</strong> — We remove dead, rubbing, weak, and damaged limbs while preserving the tree's natural shape. The result is a healthier, stronger, and more attractive tree.</p>
+              <p><strong>Crown Thinning</strong> — By selectively removing smaller interior branches, we improve airflow and sunlight penetration while reducing stress on the tree.</p>
+              <p><strong>Tree Removal</strong> — Some trees cannot be saved. When removal becomes necessary, we complete the job safely and efficiently, then grind the stump to leave you with usable yard space.</p>
+              <p><strong>Storm Cleanup</strong> — After severe weather, we quickly remove fallen trees, broken limbs, and debris to help restore safety and order to your property.</p>
+              <p><strong>Emergency Tree Service</strong> — Storm-damaged trees can create immediate hazards. We respond quickly to assess the situation, remove dangerous limbs, and help restore safety to your property.</p>
+
+              <h4 style="margin-top:20px;">Tree Removal Isn't Always the Answer</h4>
+              <p>One of the biggest misconceptions homeowners have is that every problem tree needs to be removed. In reality, many issues can be corrected through professional pruning, crown thinning, structural trimming, or targeted removal of damaged limbs. We've helped homeowners preserve beautiful mature trees while avoiding unnecessary removal costs.</p>
+              <p>That's why every project begins with an honest assessment and a recommendation based on what's best for the tree, the property, and the homeowner.</p>
+
+              <h4 style="margin-top:20px;">Meet the Crew</h4>
+              <p>We're a small, Stillwater-based crew with a strong focus on safety, professionalism, and quality workmanship. Our lead climber holds ISA certification and brings years of specialized tree care experience beyond basic landscaping services. We arrive on time, communicate clearly, and clean up thoroughly before leaving your property.</p>
+              <p>When you call, you'll speak directly with someone who works on the crew—not a call center or automated system. We believe professional tree care should feel professional from the first phone call to the final cleanup.</p>
+
+              <h4 style="margin-top:20px;">What Stillwater Neighbors Say</h4>
+              <p>"Our backyard was so cluttered with low-hanging branches and overgrowth that we barely spent time outside anymore. After Noble Tree Care finished pruning and thinning the canopy, the yard felt completely transformed. We have more sunlight, healthier grass, and a much better view." — Diane, Near Boomer Lake</p>
+              <p>"I was prepared to spend thousands removing a large oak tree because that's what another company recommended. Noble Tree Care took the time to inspect the tree and explain that it only needed professional pruning. The tree looks beautiful, and I saved a significant amount of money by getting an honest second opinion." — Mark, West Stillwater</p>
+              <p>"I had a very large tree damaged during a storm and was worried about it falling on my home. The crew arrived quickly, worked safely, and handled everything from removal to cleanup. When they finished, you could hardly tell a major tree project had taken place." — Carla, Near Oklahoma State University</p>
+
+              <h4 style="margin-top:20px;">Areas We Serve</h4>
+              <p>Oklahoma State University Area • Western Hills • The Lakes • Brookhaven • Westwood • North Country Club Area • Downtown Stillwater • Couch Park Neighborhood</p>
+              <p>Don't see your area listed? Give us a call. We proudly serve all of Payne County and surrounding communities.</p>
+
+              <h4 style="margin-top:20px;">Tree Problems We Commonly Solve</h4>
+              <p>Dead or broken limbs, branches hanging over roofs, storm-damaged trees, excessive shade, trees blocking views, trees growing too close to homes, leaning trees, overcrowded canopies, poor tree structure, dead or dying trees, and safety concerns after severe weather.</p>
+
+              <h4 style="margin-top:20px;">Common Questions From Homeowners</h4>
+              <p><strong>How Much Does Tree Pruning Cost in Stillwater?</strong> Most residential pruning projects range from $250 to $800 depending on tree size, condition, and accessibility. We provide free written estimates.</p>
+              <p><strong>Are You Licensed and Insured?</strong> Yes. We carry full liability insurance and workers' compensation coverage. Proof of insurance is available upon request.</p>
+              <p><strong>Can You Give Me a Quote Over the Phone?</strong> Not accurately. Every property and tree is different. An in-person visit allows us to provide a fair and accurate estimate at no charge.</p>
+              <p><strong>How Soon Can You Start?</strong> Most projects are scheduled within one to three weeks after estimate approval. Storm-related work is often scheduled sooner when possible.</p>
+              <p><strong>Do You Clean Up After The Job?</strong> Absolutely. We remove branches, wood, leaves, and other materials generated during the project so your property is left clean and presentable.</p>
+
+              <h4 style="margin-top:20px;">Get a Free Estimate — No Pressure, No Obligation</h4>
+              <p>Healthy, properly maintained trees can completely transform the appearance, safety, and value of your property. Whether you need pruning, crown thinning, storm cleanup, emergency tree work, or complete tree removal, we're happy to provide a free estimate. You can also send photos of your trees to the same number — we'll respond within a few hours.</p>
+              <p style="font-style:italic;">Making Stillwater Properties Brighter, Safer, and More Beautiful—One Tree at a Time.</p>
+              <p class="cta-line">→ Call or Text: (555) 555-5555 — Free Estimates • Honest Recommendations • Professional Tree Care</p>
+            </div>
+            <div class="variant-about" style="display:none;">
+              <h4>Who We Are</h4>
+              <p>I'm Carl Noble. I'm married to my best friend Laura, and together we're raising our family, right here in this community. This isn't just a business to me. It's the legacy I'm building for my family.</p>
+              <p>A tree takes decades to grow. It shelters the kids who climb it. It gives shade, beauty, and literally the air we breathe. That's why I don't like killing trees. It goes against my nature.</p>
+              <p>Twelve years ago, a homeowner in West Stillwater called me about a massive oak his grandfather planted in the backyard. Two other companies had told him it needed to come down. He was ready to write a check for thousands. I inspected that tree. I peeled back a bit of bark and checked the cambium. There it was: pinkish tinge, faint green, live buds. The limbs weren't rigid or hollow. I told him that the tree was thriving with life. It didn't need to come down. It needed pruning.</p>
+              <p>That oak is still standing today—healthy, strong, shading the same family that almost lost it. That homeowner saved thousands of dollars and hundreds of memories. I believe a tree shouldn't be killed unless it's absolutely necessary. And I'll look at yours with the same honesty.</p>
+              <h4 style="margin-top:20px;">What I Stand For</h4>
+              <p>I inspect every tree the same way: I check the cambium, I look at the limbs, and I tell you what I see. Pruning, removal, or nothing at all—you get an honest assessment. No pressure. No rush. Just the truth.</p>
+              <p class="cta-line">→ Call or Text: (555) 555-5555 — Free Estimates, No Pressure</p>
+            </div>
+          </div>
+          <div class="annotation">
+            Same client, two different tools: the homepage sells with a market-wide objection (fear of being oversold). The about page sells with one hyper-specific memory — a real diagnostic detail like checking cambium color does more for credibility than any adjective could.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SAMPLE 2 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">Home Services · Bilingual EN/ES</span>
+          <h3>Reyes Roofing &amp; Remodeling</h3>
+          <p>Full site copy written and localized in English and Spanish — full parity, not a translation pass.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <div class="lang-toggle">
+              <button class="active" onclick="showLang(this,'en')">EN</button>
+              <button onclick="showLang(this,'es')">ES</button>
+            </div>
+            <div class="lang-en">
+              <h4>We Know Oklahoma Weather. We've Got Your Home Covered.</h4>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Reyes Roofing & Remodeling — Stillwater, Oklahoma's Trusted Roofing Contractor & Remodeling Company</p>
+              <p>In Oklahoma, your roof isn't just shingles and nails—it's your family's first defense against nature's heaviest hitters. From spring hailstorms to summer heat and winter ice, our team has spent over 15 years fortifying homes across Stillwater and the surrounding region.</p>
+              <p>We don't just fix roofs; we give you the peace of mind that comes with knowing your home is built to withstand whatever blows through.</p>
+
+              <h4 style="margin-top:20px;">Why Stillwater Homeowners Choose Reyes</h4>
+              <p><strong>Stillwater-Built Expertise</strong><br>We're locals who understand Oklahoma weather patterns, Payne County building codes, and the specific storm damage challenges that hit our neighborhoods. When you hire us, you're hiring neighbors who take your safety personally.</p>
+              <p><strong>No Heavy Upfront Deposits</strong><br>A new roof or remodel is a big decision. We never ask for large sums before we start. Instead, we provide detailed, transparent estimates upfront—so you know the investment before we lift a single shingle.</p>
+              <p><strong>Insurance Claim Navigators</strong><br>Storm damage paperwork is confusing, and adjusters can be tough. We handle the heavy lifting—documenting every dent, communicating with your carrier, and guiding you step-by-step so you get the claim you deserve.</p>
+              <p><strong>Fully Licensed & Insured – Real Protection</strong><br>Your property and your family are protected by a licensed, insured contractor who carries full coverage and adheres to the highest professional standards. We bring proof to every job site.</p>
+
+              <h4 style="margin-top:20px;">Roofing Services</h4>
+              <p style="font-style:italic;">Stillwater Roofing Services Built to Outlast the Elements</p>
+              <p>Your roof is the backbone of your home. That's why we tailor every roofing solution to Oklahoma's relentless climate—because a roof that survives here is a roof built right.</p>
+              <p><strong>Roof Repair</strong><br>From wind-torn shingles to hidden leaks and storm impact, we diagnose the problem fast and restore your roof's integrity before small issues turn into costly damage.</p>
+              <p><strong>Roof Replacement</strong><br>When repairs aren't enough, we install durable, high-performance roofing systems that deliver decades of protection. We use premium materials rated for high winds and heavy hail.</p>
+              <p><strong>New Roof Installation</strong><br>Building new or upgrading an older home? We install asphalt shingle, standing-seam metal, and specialty roofing systems that enhance curb appeal and weather resistance from day one.</p>
+              <p><strong>Hail Damage Restoration</strong><br>Oklahoma storms leave marks you can't see from the ground. We thoroughly inspect, photograph, and document every bit of impact, restoring your roof to pre-storm condition—or better.</p>
+              <p><strong>Emergency Roof Repair – Fast Response When You Need It Most</strong><br>When severe weather tears through and exposes your home to the elements, we mobilize quickly to tarp, patch, and secure your property, preventing water intrusion and further structural damage.</p>
+              <p><strong>Roof Maintenance Plans</strong><br>Routine inspections and proactive maintenance catch small issues early, dramatically extending the lifespan of your roof and saving you thousands in the long run.</p>
+              <p>If you're looking for a dependable roofing contractor in Stillwater, OK, Reyes Roofing & Remodeling delivers the quality workmanship and honest communication you can rely on.</p>
+
+              <h4 style="margin-top:20px;">Remodeling Services</h4>
+              <p style="font-style:italic;">Kitchen & Bathroom Remodeling – Elevate Your Everyday Spaces</p>
+              <p>Once your roof is solid, why stop there? We bring the same craftsmanship inside to transform the rooms where you live, cook, and relax.</p>
+              <p><strong>Kitchen Remodeling in Stillwater, OK</strong><br>A thoughtfully designed kitchen improves daily life and boosts your home's long-term value. Our full-service kitchen remodels include:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Custom cabinet design and installation</li>
+                <li>Quartz and granite countertops</li>
+                <li>Custom tile backsplashes</li>
+                <li>Energy-efficient lighting upgrades</li>
+                <li>Durable flooring installation</li>
+                <li>Open-concept renovations</li>
+                <li>Complete kitchen layout redesigns</li>
+              </ul>
+              <p>We balance beauty with function, creating kitchen spaces that fit your cooking style, family flow, and budget.</p>
+              <p><strong>Bathroom Remodeling Services</strong><br>Whether you're refreshing a guest bath or building a luxury primary suite, we turn your vision into reality. Services include:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Walk-in showers with custom tile</li>
+                <li>Soaking tub and bathtub installations</li>
+                <li>Custom vanities and storage solutions</li>
+                <li>Heated tile flooring</li>
+                <li>Modern, water-efficient fixtures</li>
+                <li>ADA-compliant accessibility upgrades</li>
+                <li>Complete bathroom gut-and-renovations</li>
+              </ul>
+              <p>Every project is tailored to your personal taste, daily needs, and investment goals.</p>
+
+              <h4 style="margin-top:20px;">Additional Home Repairs & Improvements</h4>
+              <p>Not every project needs a full renovation. For smaller upgrades and essential fixes, we also provide:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Siding repair and replacement</li>
+                <li>Exterior trim and fascia repair</li>
+                <li>Deck restoration and staining</li>
+                <li>Fence repair and installation</li>
+                <li>Drywall installation and texturing</li>
+                <li>Flooring installation (hardwood, tile, LVP)</li>
+                <li>General home maintenance and handyman services</li>
+              </ul>
+              <p>From minor touch-ups to major overhauls, we bring the same obsessive attention to detail to every project.</p>
+
+              <h4 style="margin-top:20px;">Where We Work</h4>
+              <p style="font-style:italic;">Proudly Serving Oklahoma Homeowners Across the Region</p>
+              <p>Based in Stillwater, we regularly serve homeowners throughout central and northern Oklahoma, including: Stillwater, Perkins, Cushing, Perry, Guthrie, Edmond, Oklahoma City, Norman, Tulsa, and Broken Arrow.</p>
+              <p>No matter the distance, we bring our full commitment to quality and care to every community we serve.</p>
+
+              <h4 style="margin-top:20px;">Frequently Asked Questions</h4>
+              <p><strong>How much does a new roof cost?</strong> Costs depend on your roof's size, pitch, material choice, and project complexity. We provide detailed, no-obligation estimates customized to your exact home—so there are no surprises.</p>
+              <p><strong>Do you handle insurance claims?</strong> Yes. We walk homeowners through the entire claims process—from the initial damage inspection to documenting every detail and communicating directly with your insurance adjuster.</p>
+              <p><strong>Are you licensed and insured?</strong> Absolutely. We carry full licensing and comprehensive insurance. Proof is always available upon request.</p>
+              <p><strong>What roofing materials do you install?</strong> We install high-quality asphalt shingles, durable metal roofing, and other residential systems engineered specifically for Oklahoma's extreme temperature swings and severe weather.</p>
+              <p><strong>Do you offer free estimates?</strong> Yes. We provide free, thorough inspections and estimates for all roofing, remodeling, and repair projects—with zero obligation to move forward.</p>
+
+              <h4 style="margin-top:20px;">Schedule Your Free Estimate Today</h4>
+              <p>Whether you need emergency roof repair, a complete roof replacement, storm damage restoration, a kitchen transformation, or a bathroom remodel in Stillwater, Oklahoma—Reyes Roofing & Remodeling is ready to help. Partner with a local team that values quality craftsmanship, honest conversations, and dependable service above all else.</p>
+              <p class="cta-line">→ (405) 747-0099 — Call or Text Anytime. Licensed • Insured • Serving Oklahoma Homeowners for Over 15 Years.</p>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--ink-soft); margin-top:16px;">Services: Roof Repair | Roof Replacement | New Roof Installation | Hail Damage Restoration | Emergency Roof Repair | Roof Maintenance | Kitchen Remodeling | Bathroom Remodeling | Home Repairs<br>Service Area: Stillwater | Perkins | Cushing | Perry | Guthrie | Edmond | Oklahoma City | Norman | Tulsa | Broken Arrow</p>
+            </div>
+            <div class="lang-es" style="display:none;">
+              <h4>Conocemos el Clima de Oklahoma. Tenemos tu Hogar Protegido.</h4>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Reyes Roofing & Remodeling — La Empresa de Techos y Remodelaciones de Confianza en Stillwater, Oklahoma</p>
+              <p>En Oklahoma, tu techo no es solo tejas y clavos: es la primera defensa de tu familia contra los embates más duros de la naturaleza. Desde tormentas de granizo en primavera hasta el calor del verano y el hielo en invierno, nuestro equipo ha pasado más de 15 años fortaleciendo hogares en Stillwater y más allá.</p>
+              <p>No solo reparamos techos; te brindamos la tranquilidad de saber que tu hogar está construido para resistir lo que sea que venga.</p>
+
+              <h4 style="margin-top:20px;">Por Qué los Propietarios de Stillwater Eligen a Reyes</h4>
+              <p><strong>Experiencia Nacida en Stillwater</strong><br>Somos locales que conocemos los patrones climáticos de Oklahoma, los códigos de construcción del condado de Payne y los desafíos específicos de los daños por tormentas que afectan a nuestros vecindarios. Cuando nos contratas, contratas a vecinos que se toman tu seguridad como algo personal.</p>
+              <p><strong>Sin Depósitos Iniciales Elevados</strong><br>Un techo o remodelación nuevo es una decisión importante. Nunca pedimos grandes sumas antes de empezar. En su lugar, te proporcionamos presupuestos detallados y transparentes desde el principio, para que conozcas la inversión antes de que levantemos una sola teja.</p>
+              <p><strong>Gestores de Reclamaciones al Seguro</strong><br>El papeleo de los daños por tormentas es confuso y los ajustadores pueden ser exigentes. Nosotros hacemos el trabajo pesado: documentamos cada abolladura, nos comunicamos con tu aseguradora y te guiamos paso a paso para que obtengas la compensación que mereces.</p>
+              <p><strong>Completamente Licenciados y Asegurados – Protección Real</strong><br>Tu propiedad y tu familia están protegidas por un contratista con licencia y seguro, que cuenta con cobertura total y cumple con los más altos estándares profesionales. Llevamos la prueba a cada sitio de trabajo.</p>
+
+              <h4 style="margin-top:20px;">Servicios de Techos</h4>
+              <p style="font-style:italic;">Servicios de Techos en Stillwater Diseñados para Superar los Elementos</p>
+              <p>Tu techo es la columna vertebral de tu hogar. Por eso adaptamos cada solución para techos al implacable clima de Oklahoma, porque un techo que sobrevive aquí es un techo bien construido.</p>
+              <p><strong>Reparación de Techos</strong><br>Desde tejas rotas por el viento hasta filtraciones ocultas y el impacto de tormentas, diagnosticamos el problema rápidamente y restauramos la integridad de tu techo antes de que los pequeños problemas se conviertan en costosos daños.</p>
+              <p><strong>Reemplazo de Techos</strong><br>Cuando las reparaciones no son suficientes, instalamos sistemas de techado duraderos y de alto rendimiento que ofrecen décadas de protección. Usamos materiales premium clasificados para vientos fuertes y granizo severo.</p>
+              <p><strong>Instalación de Techos Nuevos</strong><br>¿Estás construyendo una casa nueva o actualizando una más antigua? Instalamos sistemas de techado con tejas asfálticas, metal de junta alzada y sistemas especializados que mejoran el atractivo exterior y la resistencia climática desde el primer día.</p>
+              <p><strong>Restauración por Daños de Granizo</strong><br>Las tormentas de Oklahoma dejan marcas que no se ven desde el suelo. Inspeccionamos, fotografiamos y documentamos minuciosamente cada impacto, restaurando tu techo a su estado anterior a la tormenta, o mejor.</p>
+              <p><strong>Reparación de Emergencia de Techos – Respuesta Rápida Cuando Más lo Necesitas</strong><br>Cuando el clima severo azota y deja tu hogar expuesto a los elementos, nos movilizamos rápidamente para cubrir con lonas, parchar y asegurar tu propiedad, evitando la entrada de agua y mayores daños estructurales.</p>
+              <p><strong>Planes de Mantenimiento de Techos</strong><br>Las inspecciones rutinarias y el mantenimiento proactivo detectan problemas pequeños a tiempo, prolongando drásticamente la vida útil de tu techo y ahorrándote miles de dólares a largo plazo.</p>
+              <p>Si buscas un contratista de techos confiable en Stillwater, OK, Reyes Roofing & Remodeling ofrece la calidad de mano de obra y la comunicación honesta en la que puedes confiar.</p>
+
+              <h4 style="margin-top:20px;">Servicios de Remodelación</h4>
+              <p style="font-style:italic;">Remodelación de Cocinas y Baños – Eleva tus Espacios Cotidianos</p>
+              <p>Una vez que tu techo es sólido, ¿por qué detenerse? Llevamos la misma artesanía al interior para transformar los espacios donde vives, cocinas y te relajas.</p>
+              <p><strong>Remodelación de Cocinas en Stillwater, OK</strong><br>Una cocina bien diseñada mejora la vida diaria y aumenta el valor a largo plazo de tu hogar. Nuestras remodelaciones de cocina de servicio completo incluyen:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Diseño e instalación de gabinetes personalizados</li>
+                <li>Encimeras de cuarzo y granito</li>
+                <li>Salpicaderos (backsplashes) de azulejo personalizados</li>
+                <li>Actualizaciones de iluminación eficiente</li>
+                <li>Instalación de pisos duraderos</li>
+                <li>Renovaciones de concepto abierto</li>
+                <li>Rediseño completo de la distribución de la cocina</li>
+              </ul>
+              <p>Equilibramos la belleza con la funcionalidad, creando espacios de cocina que se adaptan a tu estilo de cocinar, al flujo de tu familia y a tu presupuesto.</p>
+              <p><strong>Servicios de Remodelación de Baños</strong><br>Ya sea que estés renovando un baño de invitados o construyendo una suite principal de lujo, convertimos tu visión en realidad. Los servicios incluyen:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Duchas a ras de suelo con azulejo personalizado</li>
+                <li>Instalación de tinas de baño y bañeras de inmersión</li>
+                <li>Tocadores personalizados y soluciones de almacenamiento</li>
+                <li>Pisos de azulejo con calefacción</li>
+                <li>Accesorios modernos y eficientes en el uso del agua</li>
+                <li>Actualizaciones de accesibilidad compatibles con ADA</li>
+                <li>Remodelaciones completas de baños</li>
+              </ul>
+              <p>Cada proyecto se adapta a tu gusto personal, necesidades diarias y objetivos de inversión.</p>
+
+              <h4 style="margin-top:20px;">Reparaciones y Mejoras Adicionales para el Hogar</h4>
+              <p>No todos los proyectos necesitan una renovación completa. Para mejoras más pequeñas y reparaciones esenciales, también ofrecemos:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>Reparación y reemplazo de revestimientos exteriores (siding)</li>
+                <li>Reparación de molduras exteriores y fascia</li>
+                <li>Restauración y sellado de terrazas (decks)</li>
+                <li>Reparación e instalación de cercas</li>
+                <li>Instalación y texturizado de paneles de yeso (drywall)</li>
+                <li>Instalación de pisos (madera, azulejo, LVP)</li>
+                <li>Servicios generales de mantenimiento y reparaciones del hogar</li>
+              </ul>
+              <p>Desde retoques menores hasta renovaciones importantes, llevamos la misma atención obsesiva al detalle a cada proyecto.</p>
+
+              <h4 style="margin-top:20px;">Dónde Trabajamos</h4>
+              <p style="font-style:italic;">Atendiendo con Orgullo a los Propietarios de Oklahoma en Toda la Región</p>
+              <p>Con sede en Stillwater, atendemos regularmente a propietarios en el centro y norte de Oklahoma, incluyendo: Stillwater, Perkins, Cushing, Perry, Guthrie, Edmond, Oklahoma City, Norman, Tulsa, y Broken Arrow.</p>
+              <p>Sin importar la distancia, llevamos nuestro compromiso total con la calidad y el cuidado a cada comunidad a la que servimos.</p>
+
+              <h4 style="margin-top:20px;">Preguntas Frecuentes</h4>
+              <p><strong>¿Cuánto cuesta un techo nuevo?</strong> Los costos dependen del tamaño, la inclinación, la elección de materiales y la complejidad del proyecto de tu techo. Proporcionamos presupuestos detallados y sin compromiso, personalizados para tu hogar exacto, para que no haya sorpresas.</p>
+              <p><strong>¿Manejan las reclamaciones de seguros?</strong> Sí. Acompañamos a los propietarios durante todo el proceso de reclamación, desde la inspección inicial de daños hasta la documentación de cada detalle y la comunicación directa con el ajustador de tu seguro.</p>
+              <p><strong>¿Están licenciados y asegurados?</strong> Absolutamente. Contamos con la licencia completa y un seguro integral. Siempre tenemos la prueba disponible a petición.</p>
+              <p><strong>¿Qué materiales de techado instalan?</strong> Instalamos tejas asfálticas de alta calidad, techos metálicos duraderos y otros sistemas residenciales diseñados específicamente para las extremas fluctuaciones de temperatura y las tormentas severas de Oklahoma.</p>
+              <p><strong>¿Ofrecen presupuestos gratuitos?</strong> Sí. Ofrecemos inspecciones y presupuestos gratuitos y exhaustivos para todos los proyectos de techos, remodelación y reparaciones, sin ningún compromiso de seguir adelante.</p>
+
+              <h4 style="margin-top:20px;">Programa tu Presupuesto Gratuito Hoy</h4>
+              <p>Ya sea que necesites reparación de emergencia de techos, un reemplazo completo de techo, restauración por daños de tormenta, una transformación de cocina o una remodelación de baño en Stillwater, Oklahoma, Reyes Roofing & Remodeling está listo para ayudarte. Asóciate con un equipo local que valora la calidad de la artesanía, las conversaciones honestas y el servicio confiable por encima de todo.</p>
+              <p class="cta-line">→ (405) 747-0099 — Llama o Envía un Mensaje en Cualquier Momento. Licenciados • Asegurados • Sirviendo a los Propietarios de Oklahoma por Más de 15 Años.</p>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--ink-soft); margin-top:16px;">Servicios: Reparación de Techos | Reemplazo de Techos | Instalación de Techos Nuevos | Restauración por Daños de Granizo | Reparación de Emergencia de Techos | Mantenimiento de Techos | Remodelación de Cocinas | Remodelación de Baños | Reparaciones del Hogar<br>Área de Servicio: Stillwater | Perkins | Cushing | Perry | Guthrie | Edmond | Oklahoma City | Norman | Tulsa | Broken Arrow</p>
+            </div>
+          </div>
+          <div class="annotation">
+            Written natively in both languages so the persuasion logic — not just the vocabulary — holds up in each. Note the parallel structure: both versions build trust the same way (local expertise → no big deposits → insurance help → licensing) before ever listing a service, so neither language feels like an afterthought translation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 3 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">Legal · Homepage</span>
+          <h3>Stillwater Injury Law Group</h3>
+          <p>Personal injury firm homepage — built to earn trust before it asks for a call.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <h4>Personal Injury Representation Focused on People, Not Insurance Companies</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Stillwater Injury Law Group — Free Consultation • Available 24/7</p>
+            <p>After an accident, most people aren't thinking about lawsuits. They're wondering how they'll pay their medical bills, whether they'll miss work, and what they're supposed to say when the insurance company calls.</p>
+            <p>That's where we help. At Stillwater Injury Law Group, we help injured Oklahomans understand their options, deal with insurance companies, and pursue fair compensation without unnecessary stress or confusion.</p>
+            <p>Whether your accident happened yesterday or several weeks ago, we'll explain where you stand and what comes next.</p>
+
+            <h4 style="margin-top:20px;">Why Clients Trust Us</h4>
+            <p>Some law firms focus on finding the biggest cases. We focus on helping the people who call us. If your accident left you with medical bills, lost income, ongoing pain, or questions about what to do next, we'll take the time to listen.</p>
+            <p>Not every case involves catastrophic injuries. Not every claim is worth hundreds of thousands of dollars. That doesn't mean it doesn't matter.</p>
+            <p>If we believe we can help, we'll tell you. If we don't, we'll be honest about that too.</p>
+
+            <h4 style="margin-top:20px;">We Welcome Complex Cases</h4>
+            <p>Some cases are straightforward. Others aren't. Maybe there wasn't a police report. Maybe the fault is disputed. Maybe your injuries didn't appear until days later. Maybe the insurance company is already questioning your claim.</p>
+            <p>Those situations don't automatically mean you don't have a case. Complex cases don't scare us. They require time, investigation, and a willingness to keep digging when the answers aren't obvious. That's exactly what we're prepared to do.</p>
+
+            <h4 style="margin-top:20px;">We Deal With the Insurance Companies</h4>
+            <p>Insurance companies handle claims every day. Most people don't. Adjusters know what questions to ask, what information to request, and how to protect their company's interests. Our job is to protect yours.</p>
+            <p>When the insurance company calls, you can direct them to us. We'll handle the communication, negotiations, and paperwork so you can focus on your recovery.</p>
+
+            <h4 style="margin-top:20px;">Meet Your Attorney — Sarah Mitchell, Founding Attorney</h4>
+            <p>Before becoming an attorney, Sarah Mitchell worked as an insurance claims adjuster. She spent years seeing how claims were evaluated, negotiated, and sometimes undervalued. That experience gave her a unique perspective on how insurance companies approach accident claims.</p>
+            <p>Today, she uses that knowledge to advocate for injured clients throughout Oklahoma. For more than 12 years, Sarah has represented individuals and families dealing with the financial, physical, and emotional challenges that often follow a serious accident. Clients appreciate her straightforward advice, responsive communication, and commitment to keeping them informed throughout the process.</p>
+
+            <h4 style="margin-top:20px;">What Our Clients Say</h4>
+            <p>"I thought my case was too small to hire a lawyer. Sarah explained everything in plain English and handled the insurance company from day one." — Client Testimonial</p>
+            <p>"The insurance company offered far less than I expected. Stillwater Injury Law Group negotiated a settlement that covered my medical bills and lost wages." — Client Testimonial</p>
+
+            <h4 style="margin-top:20px;">Injured in a Car Accident? Speak With an Attorney First.</h4>
+            <p>The hours after an accident can be confusing. Insurance companies often reach out quickly, sometimes before you fully understand the extent of your injuries or the impact the accident may have on your life. What you say during those early conversations can affect your claim.</p>
+            <p>Before speaking with an insurance adjuster, consider speaking with an attorney who can explain your rights, answer your questions, and help you avoid common mistakes. A brief consultation costs nothing and may help you make better-informed decisions moving forward.</p>
+
+            <p>You don't need to gather stacks of paperwork before calling us. You don't need to understand legal terminology. You don't even need to know whether you have a case. Simply tell us what happened. We'll listen, answer your questions, and provide an honest assessment of your situation.</p>
+            <p>If we believe we can help, we'll explain your options. If we can't, we'll tell you that too. If we take your case, you pay no attorney fees unless we recover compensation on your behalf.</p>
+            <p class="cta-line">→ Free Consultation. No Fee Unless We Recover Compensation for You.</p>
+          </div>
+          <div class="annotation">
+            Opens on the reader's actual fear — bills, missed work — instead of legal positioning. Trust gets built before the sales ask ever appears, and the attorney bio does double duty: her past as a claims adjuster reframes "years of experience" into "she knows the other side's playbook."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 4 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">Email · Nurture Sequence</span>
+          <h3>"After the Accident" — 3-Email Sequence</h3>
+          <p>A lead-nurture sequence timed to match how doubt actually develops after a signup.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <h4>Email 1 — Sent 1 hour after signup</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: What the insurance company won't tell you</p>
+            <p>The first call from the insurance company often comes sooner than people expect. You're still dealing with vehicle damage, doctor's appointments, and figuring out what happens next. Then the insurance company calls.</p>
+            <p>The adjuster may sound friendly and helpful. They might tell you they just need a quick recorded statement to move the claim forward. What they may not explain is that those statements can sometimes be used later to challenge or reduce your claim.</p>
+            <p>One of the first things we tell clients is simple: let us handle the insurance company. You don't have to answer every question immediately, and you don't have to navigate the claims process alone. We handle the conversation so you don't accidentally say something that hurts your case.</p>
+            <p>If you're still deciding whether you need an attorney, that's fine. But before you pick up the phone for the insurance company, read this: [Link to: "5 Things Never to Say to an Insurance Adjuster" – PDF]</p>
+            <p>When you're ready, a free consultation costs you nothing.<br>Call or text: (555) 555-5555</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+
+            <h4 style="margin-top:24px;">Email 2 — Sent 3 days later</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: Even "Small" Accidents Can Mean Real Money Left on the Table</p>
+            <p>One of the biggest myths we hear: "My accident wasn't that bad. Hiring a lawyer would be overkill." But here's what we see all the time: someone has minor neck pain a week after a crash. They don't see a doctor because they assume it'll go away. Two months later, they're in physical therapy. The insurance company has already closed the claim. Now they're paying out of pocket.</p>
+            <p>We're not here to scare you. We're here to help you avoid that situation. If your accident happened within the last 30 days—even if you feel okay right now—a short conversation with us costs nothing.</p>
+            <p>We'll help you understand:</p>
+            <ul style="margin:0 0 14px; padding-left:22px;">
+              <li>What symptoms are worth paying attention to</li>
+              <li>What records you should keep</li>
+              <li>Whether you may have a claim at all</li>
+            </ul>
+            <p>No pressure. No obligation. No attorney fees unless we recover compensation for you.</p>
+            <p>Ready to talk?<br>Call or text: (555) 555-5555<br>Or simply reply to this email. Sarah reads every message personally.</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+
+            <h4 style="margin-top:24px;">Email 3 — Sent 7 days later</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: One question we get asked every week</p>
+            <p>"How long do I have to file a claim?" It's one of the most common questions we hear after an accident. Most people know there's a deadline. What they don't realize is how quickly time starts working against them.</p>
+            <p>Photos get lost. Witnesses forget details. Medical records become harder to gather. And the longer a claim drags on, the harder it can become to prove exactly what happened. In Oklahoma, most car accident claims must be filed within two years of the accident date. That may sound like plenty of time. But building a strong claim often starts long before that deadline arrives.</p>
+            <p>If your accident happened within the last 18 months, now is a good time to make sure you understand where things stand. We're offering a free, no-obligation case timeline review. We'll help you understand:</p>
+            <ul style="margin:0 0 14px; padding-left:22px;">
+              <li>Important deadlines that may apply to your situation</li>
+              <li>What documentation you should be saving</li>
+              <li>What steps may make sense moving forward</li>
+            </ul>
+            <p>We're happy to answer your questions, even if you're not ready to hire an attorney.</p>
+            <p>No pressure. No obligation.<br>Call or text: (555) 555-5555<br>Or simply reply to this email.</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+          </div>
+          <div class="annotation">
+            Each email answers the specific doubt a reader has at that exact moment — "handle the insurer" on day one, "small accidents still cost you" on day three, "the clock is ticking" on day seven. Sequence timing does as much work as the copy itself, and every email ends with a genuinely low-friction ask (reply to this email) alongside the phone number.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:var(--navy); padding:40px 0;">
+  <div class="wrap" style="text-align:center;">
+    <span class="label" style="color:var(--gold-bright);">Let's Work Together</span>
+    <h3 style="color:var(--paper); font-size:1.5rem; margin-top:10px; max-width:34ch; margin-left:auto; margin-right:auto;">If your agency needs a writer for an upcoming project, let's talk.</h3>
+    <a class="btn btn-primary" style="background:var(--gold); color:var(--navy); margin-top:22px; display:inline-block;" href="#contact">Contact Me</a>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head"><span class="label">02 — How I Can Help</span></div>
+    <h2 style="margin-bottom:44px;">Built to plug into an agency workflow.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">Website Copy</span>
+        <h3>Homepage &amp; Service Pages</h3>
+        <p>Structured with clear headings, ready to drop into Webflow, WordPress, or a static build — no rewrite needed.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Email</span>
+        <h3>Nurture Sequences</h3>
+        <p>Multi-email flows timed to how a reader's doubts actually change over days, not just one pitch repeated.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Bilingual</span>
+        <h3>English / Español</h3>
+        <p>Full native-parity copy in both languages — for clients serving bilingual communities or markets.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">SEO Content</span>
+        <h3>Local Search-Ready Copy</h3>
+        <p>Keyword-rich headings for each service, neighborhood and city-specific mentions, and FAQ sections structured to match how people actually search.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Brand Messaging</span>
+        <h3>About Pages &amp; Founder Stories</h3>
+        <p>Trust built through specificity, not a generic bio — real detail and a real voice behind the business.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Full-Site Copywriting</span>
+        <h3>Beyond the Homepage</h3>
+        <p>Homepage, service pages, FAQ, and service-area content written together as one consistent site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="label">03 — Get In Touch</span>
+    <h2>Have a client that needs copy?</h2>
+    <p>I work with design agencies as the writer they send that project to — one-off or ongoing. Send over a brief, or just say hello.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:angelwritescontent@gmail.com">Email Me</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Angel Sterling — Freelance Copywriter</span>
+      <span>This is a speculative portfolio project created to demonstrate website copywriting and brand messaging skills. The businesses, testimonials, and contact information shown are fictional and used for portfolio purposes only.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleSample(headEl){
+    const sample = headEl.parentElement;
+    const body = sample.querySelector('.sample-body');
+    const isOpen = sample.getAttribute('data-open') === 'true';
+    if(isOpen){
+      body.style.maxHeight = null;
+      sample.setAttribute('data-open','false');
+    } else {
+      sample.setAttribute('data-open','true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+  function showVariant(btn, variant){
+    const block = btn.closest('.copy-block');
+    block.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    block.querySelector('.variant-home').style.display = variant === 'home' ? 'block' : 'none';
+    block.querySelector('.variant-about').style.display = variant === 'about' ? 'block' : 'none';
+    const sample = block.closest('.sample');
+    if(sample.getAttribute('data-open') === 'true'){
+      const body = sample.querySelector('.sample-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+  function showLang(btn, lang){
+    const block = btn.closest('.copy-block');
+    block.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    block.querySelector('.lang-en').style.display = lang === 'en' ? 'block' : 'none';
+    block.querySelector('.lang-es').style.display = lang === 'es' ? 'block' : 'none';
+    // recalc height if this sample is open
+    const sample = block.closest('.sample');
+    if(sample.getAttribute('data-open') === 'true'){
+      const body = sample.querySelector('.sample-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+</script>
+
+</body>
+</html>
