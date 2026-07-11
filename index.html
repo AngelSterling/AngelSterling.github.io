@@ -255,7 +255,7 @@
     <ul class="navlinks">
       <li><a href="#work">My Writing</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#about">About Angel</a></li>
+      <li><a href="#" onclick="openAboutModal(event)">About Angel</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -276,8 +276,9 @@
 <section style="background:var(--navy); padding:36px 0;">
   <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
     <div>
-      <span class="label" style="color:var(--gold-bright);">Currently Available</span>
-      <h3 style="color:var(--paper); font-size:1.4rem; margin-top:8px;">I'm actively taking on new client work — one-off or ongoing.</h3>
+      <span class="label" style="color:var(--gold-bright);">About Angel</span>
+      <h3 style="color:var(--paper); font-size:1.4rem; margin-top:8px;">I write the copy so you don't have to chase it.</h3>
+      <p style="color:rgba(245,242,234,0.7); margin-top:6px; font-size:0.95rem;">Currently available — actively taking on new client work, one-off or ongoing.</p>
     </div>
     <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
   </div>
@@ -285,33 +286,6 @@
 
 <hr class="rule">
 
-<section class="section" id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <span class="label">About Angel</span>
-        <h2 style="margin-top:14px; margin-bottom:22px; font-size:clamp(1.6rem,3.4vw,2.2rem);">I write the copy so you don't have to chase it.</h2>
-        <p>I'm Angel Sterling. I've always done things myself.</p>
-        <p>At 14, I started a painting business. Not because I loved painting — because I saw people needed work done and I figured I could do it better than whoever else they'd find.</p>
-        <p>From there, I sold used cars. Learned fast that the sale happened in the questions, not the pitch. I sold siding and windows door-to-door in the heat. I learned that selling isn't about talking — it's about listening to what someone actually needs and showing them how you fit.</p>
-        <p>Somewhere along the way, I realized I was also a writer. I didn't plan it that way. I just kept having to explain things clearly — to customers, to clients, to myself — and words were the tool that worked.</p>
-        <p>The same thing kept happening: agencies with beautiful builds, stalled because the copy never came. So I started writing it. Now that's what I do.</p>
-        <p>I write for agencies and web design teams — in English and Spanish, written with the same voice in both. I write like someone who's sat across from customers and listened to what they actually say when they're trying to decide.</p>
-        <p>I'm honest. I believe other people are too. Some people think that sounds naive. It's just how I work.</p>
-        <p>I'm married to Laura. We have two young daughters, 5 and 3. They're the reason I don't waste time on work that doesn't matter, and they're the reason I sleep well at night.</p>
-        <p>I deliver structured copy that's ready to build. Clear messaging. Organized files. No chasing for revisions. No disappearing halfway through a project. Just copy that helps agencies launch websites they're proud to put their name on.</p>
-        <p>I'll ask you what you're stuck on. You'll tell me. We'll figure out if I can help.</p>
-      </div>
-      <ul class="fact-list">
-        <li><span>Specialty</span><span>Web copy for local &amp; service businesses</span></li>
-        <li><span>Languages</span><span>English / Español</span></li>
-        <li><span>Formats</span><span>Homepage · Service pages · Email · FAQ</span></li>
-        <li><span>Delivery</span><span>Structured docs, ready to build</span></li>
-        <li><span>Turnaround</span><span>Scoped per project</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <hr class="rule">
 
@@ -842,7 +816,40 @@
   </div>
 </footer>
 
+<div id="about-modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(28,35,51,0.7); z-index:100; padding:24px;" onclick="if(event.target===this) closeAboutModal()">
+  <div style="max-width:640px; margin:40px auto; background:var(--paper); border-radius:2px; max-height:85vh; overflow-y:auto; position:relative; padding:40px 36px;">
+    <button onclick="closeAboutModal()" aria-label="Close" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.6rem; color:var(--ink-soft); cursor:pointer; line-height:1;">&times;</button>
+    <span class="label">About Angel</span>
+    <p style="margin-top:18px;">I'm Angel Sterling. I've always done things myself.</p>
+    <p>At 14, I started a painting business. Not because I loved painting — because I saw people needed work done and I figured I could do it better than whoever else they'd find.</p>
+    <p>From there, I sold used cars. Learned fast that the sale happened in the questions, not the pitch. I sold siding and windows door-to-door in the heat. I learned that selling isn't about talking — it's about listening to what someone actually needs and showing them how you fit.</p>
+    <p>Somewhere along the way, I realized I was also a writer. I didn't plan it that way. I just kept having to explain things clearly — to customers, to clients, to myself — and words were the tool that worked.</p>
+    <p>The same thing kept happening: agencies with beautiful builds, stalled because the copy never came. So I started writing it. Now that's what I do.</p>
+    <p>I write for agencies and web design teams — in English and Spanish, written with the same voice in both. I write like someone who's sat across from customers and listened to what they actually say when they're trying to decide.</p>
+    <p>I'm honest. I believe other people are too. Some people think that sounds naive. It's just how I work.</p>
+    <p>I'm married to Laura. We have two young daughters, 5 and 3. They're the reason I don't waste time on work that doesn't matter, and they're the reason I sleep well at night.</p>
+    <p>I deliver structured copy that's ready to build. Clear messaging. Organized files. No chasing for revisions. No disappearing halfway through a project. Just copy that helps agencies launch websites they're proud to put their name on.</p>
+    <p>I'll ask you what you're stuck on. You'll tell me. We'll figure out if I can help.</p>
+    <ul class="fact-list" style="margin-top:24px;">
+      <li><span>Specialty</span><span>Web copy for local &amp; service businesses</span></li>
+      <li><span>Languages</span><span>English / Español</span></li>
+      <li><span>Formats</span><span>Homepage · Service pages · Email · FAQ</span></li>
+      <li><span>Delivery</span><span>Structured docs, ready to build</span></li>
+      <li><span>Turnaround</span><span>Scoped per project</span></li>
+    </ul>
+  </div>
+</div>
+
 <script>
+  function openAboutModal(e){
+    if(e) e.preventDefault();
+    document.getElementById('about-modal-overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAboutModal(){
+    document.getElementById('about-modal-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
   function toggleSample(headEl){
     const sample = headEl.parentElement;
     const body = sample.querySelector('.sample-body');
