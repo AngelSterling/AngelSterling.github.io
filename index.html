@@ -100,7 +100,7 @@
   }
   .btn{
     font-family:'JetBrains Mono', monospace;
-    font-size:0.82rem;
+    font-size:0.9rem;
     letter-spacing:0.05em;
     text-decoration:none;
     padding:14px 24px;
@@ -191,7 +191,7 @@
   .copy-block p:last-child{margin-bottom:0;}
   .copy-block .cta-line{
     font-family:'JetBrains Mono', monospace;
-    font-size:0.82rem;
+    font-size:0.9rem;
     color:var(--oxblood);
     margin-top:16px;
   }
@@ -250,7 +250,7 @@
   .footer-bottom{
     margin-top:64px; padding-top:24px; border-top:1px solid var(--rule-light);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-    font-size:0.82rem; color:rgba(245,242,234,0.5);
+    font-size:0.9rem; color:rgba(245,242,234,0.5);
   }
 </style>
 </head>
@@ -287,7 +287,10 @@
       <h3 style="color:var(--paper); font-size:1.4rem; margin-top:8px;">I write the copy so you don't have to chase it.</h3>
       <p style="color:rgba(245,242,234,0.7); margin-top:6px; font-size:0.95rem;">Currently available — actively taking on new client work, one-off or ongoing.</p>
     </div>
-    <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-ghost" style="border-color:rgba(245,242,234,0.4); color:var(--paper);" href="#" onclick="openAboutModal(event)">Read My Story</a>
+      <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
+    </div>
   </div>
 </section>
 
@@ -299,7 +302,7 @@
 <section class="section" id="work">
   <div class="wrap">
     <div class="section-head"><span class="label">01 — My Writing</span></div>
-    <h2 style="margin-bottom:14px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Five samples. Five different jobs the copy has to do.</h2>
+    <h2 style="margin-bottom:14px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Six samples. Six different jobs the copy has to do. <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" style="font-size:0.55em; font-family:'JetBrains Mono', monospace; color:var(--gold); vertical-align:middle; text-decoration:none; border-bottom:1px solid var(--gold);">→ Includes Spanish-only work</a></h2>
     <p class="section-intro">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
 
     <!-- SAMPLE 1 -->
@@ -322,7 +325,7 @@
             </div>
             <div class="variant-home">
               <h4>Before You Spend Thousands Removing a Tree, Get a Professional Second Opinion</h4>
-              <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Professional Tree Service for Homes and Businesses Throughout Payne County — Free Estimates • Local Arborists • Fully Insured</p>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Professional Tree Service for Homes and Businesses Throughout Payne County — Free Estimates • Local Arborists • Fully Insured</p>
               <p>Stillwater Noble Tree Care provides tree trimming, tree pruning, tree removal, crown thinning, and storm cleanup services throughout Stillwater and Payne County.</p>
               <p>Many homeowners assume a problem tree needs to be removed. Sometimes that's true. But many trees can be safely preserved through professional pruning and corrective care—saving homeowners thousands of dollars while protecting the beauty and value of their property.</p>
               <p>Our goal isn't to sell the biggest project possible. Our goal is to recommend the right solution. Whether you need routine maintenance, emergency storm cleanup, or complete tree removal, you'll receive honest recommendations, professional workmanship, and results you'll notice immediately.</p>
@@ -424,6 +427,7 @@
               <p>So I started my own company with my brother Gabriel. We do it the way my dad taught us — right the first time, every time. Just a roof that's built to last.</p>
               <p>We're locals. We live here. I drive these streets every day. When I see a roof I did five years ago still holding up, that's my satisfaction. It's not just the money. It's pride in my work. It's pride in my town.</p>
               <p>That's why I sleep easy.</p>
+              <p style="font-style:italic; color:var(--ink-soft);">Most repairs run $300–$600. Full replacements land between $8,000 and $15,000 — you won't know your real number until we get up there and look.</p>
 
               <h4 style="margin-top:20px;">We Start with a Conversation, Not a Contract</h4>
               <p>We don't show up with a sales pitch. We show up with honest questions:</p>
@@ -439,7 +443,7 @@
               <p><strong>Roof Repair</strong><br>From wind-torn shingles to hidden leaks, we diagnose the problem fast and fix it before small issues turn into costly damage.</p>
               <p><strong>Roof Replacement</strong><br>When repairs aren't enough, we install high-performance roofing systems rated for high winds and heavy hail. Good materials, put on right, so you don't have to think about it for a long time.</p>
               <p><strong>New Roof Installation</strong><br>Asphalt shingle, standing-seam metal, or specialty systems — we install roofs that enhance curb appeal and weather resistance from day one.</p>
-              <p><strong>Hail Damage Restoration</strong><br>Oklahoma storms leave marks you can't see from the ground. We inspect, photograph, and document every bit of impact — then restore your roof to pre-storm condition or better.</p>
+              <p><strong>Hail Damage Restoration</strong><br>Oklahoma storms leave marks you can't see from the ground. We inspect, photograph, and document every bit of impact — then restore your roof to pre-storm condition or better. Not sure if a recent storm hit you? [Link to: "5 Signs Hail Damaged Your Roof" – Blog]</p>
               <p><strong>Emergency Roof Repair</strong><br>Severe weather tears through, we mobilize fast. Tarps, patches, and temporary fixes to prevent water intrusion and further damage.</p>
               <p><strong>Roof Maintenance Plans</strong><br>Routine inspections catch small issues early — so you don't end up replacing your roof before you have to.</p>
 
@@ -465,7 +469,8 @@
 
               <h4 style="margin-top:20px;">Where We Work</h4>
               <p>We know these streets because we live on them. We serve homeowners throughout central and northern Oklahoma, including: Stillwater • Perkins • Cushing • Perry • Guthrie • Edmond • Oklahoma City • Norman • Tulsa • Broken Arrow</p>
-              <p>Don't see your area? Call us. We serve all of Payne County and surrounding communities.</p>
+              <p>Don't see your area? Call us. We serve all of Payne County and surrounding communities. [Link to: Stillwater Service Area Page]</p>
+              <p style="font-style:italic; color:var(--ink-soft);">Want the full checklist before we get there? [Link to: "What to Expect During a Roof Inspection" – PDF Guide]</p>
 
               <h4 style="margin-top:20px;">Common Questions</h4>
               <p><strong>How much does a new roof cost?</strong> Costs depend on size, pitch, materials, and complexity. We provide detailed, no-obligation estimates customized to your exact home. Most roof repairs start around $300–$600; replacements typically range from $8,000–$15,000 depending on the job.</p>
@@ -489,6 +494,7 @@
               <p>Por eso empecé mi propia empresa con mi hermano Gabriel. Hacemos las cosas como mi papá nos enseñó: bien desde la primera vez, siempre. Nada más un techo que esté hecho para durar.</p>
               <p>Somos de aquí. Vivimos aquí. Yo manejo por estas calles todos los días. Cuando veo un techo que hice hace cinco años y sigue firme, esa es mi satisfacción. No es solo el cheque. Es el orgullo por mi trabajo. Es el orgullo por mi pueblo.</p>
               <p>Por eso duermo tranquilo.</p>
+              <p style="font-style:italic; color:var(--ink-soft);">La mayoría de las reparaciones andan entre $300 y $600. Los reemplazos completos van entre $8,000 y $15,000 — no vas a saber tu número real hasta que subamos y lo veamos.</p>
 
               <h4 style="margin-top:20px;">Empezamos con una plática, no con un contrato</h4>
               <p>No llegamos con un discurso de ventas. Llegamos con preguntas honestas:</p>
@@ -504,7 +510,7 @@
               <p><strong>Reparación de techos</strong><br>Desde tejas levantadas por el viento hasta filtraciones escondidas, diagnosticamos el problema rápido y lo arreglamos antes de que algo pequeño se convierta en un dolor de cabeza caro.</p>
               <p><strong>Reemplazo de techo</strong><br>Cuando la reparación ya no es suficiente, instalamos sistemas de alto rendimiento diseñados para vientos fuertes y granizo. Buenos materiales, bien puestos, para no tener que volver a tocarlo en mucho rato.</p>
               <p><strong>Instalación de techo nuevo</strong><br>Teja asfáltica, lámina metálica vertical o sistemas especiales — instalamos techos que mejoran la fachada y la resistencia al clima desde el primer día.</p>
-              <p><strong>Restauración por daños de granizo</strong><br>Las tormentas de Oklahoma dejan marcas que no se ven desde el suelo. Inspeccionamos, fotografiamos y documentamos cada impacto — y dejamos su techo como antes de la tormenta, o mejor.</p>
+              <p><strong>Restauración por daños de granizo</strong><br>Las tormentas de Oklahoma dejan marcas que no se ven desde el suelo. Inspeccionamos, fotografiamos y documentamos cada impacto — y dejamos su techo como antes de la tormenta, o mejor. ¿No está seguro si una tormenta reciente le pegó? [Enlace a: "5 Señales de que el Granizo Dañó su Techo" – Blog]</p>
               <p><strong>Reparación de emergencia</strong><br>Cuando el clima golpea duro, nos movemos rápido. Lona, parches y arreglos temporales para evitar que el agua entre y cause más daños.</p>
               <p><strong>Planes de mantenimiento</strong><br>Inspecciones periódicas que detectan problemas pequeños antes de que crezcan — para que no le toque cambiarlo antes de tiempo.</p>
 
@@ -530,7 +536,8 @@
 
               <h4 style="margin-top:20px;">Dónde trabajamos</h4>
               <p>Conocemos estas calles porque vivimos en ellas. Atendemos a dueños de casa en todo el centro y norte de Oklahoma, incluyendo: Stillwater • Perkins • Cushing • Perry • Guthrie • Edmond • Oklahoma City • Norman • Tulsa • Broken Arrow</p>
-              <p>¿No ve su ciudad? Llámenos. Atendemos todo el condado de Payne y comunidades cercanas.</p>
+              <p>¿No ve su ciudad? Llámenos. Atendemos todo el condado de Payne y comunidades cercanas. [Enlace a: Página del Área de Servicio de Stillwater]</p>
+              <p style="font-style:italic; color:var(--ink-soft);">¿Quiere la lista completa antes de que lleguemos? [Enlace a: "Qué Esperar Durante una Inspección de Techo" – Guía PDF]</p>
 
               <h4 style="margin-top:20px;">Preguntas frecuentes</h4>
               <p><strong>¿Cuánto cuesta un techo nuevo?</strong> Depende del tamaño, la pendiente, los materiales y la complejidad del trabajo. Damos presupuestos detallados sin compromiso, ajustados a su casa. La mayoría de las reparaciones andan entre $300 y $600; los reemplazos suelen estar entre $8,000 y $15,000, dependiendo del trabajo.</p>
@@ -661,7 +668,7 @@
           <div class="copy-block">
             <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <h4>Personal Injury Representation Focused on People, Not Insurance Companies</h4>
-            <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Stillwater Injury Law Group — Free Consultation • Available 24/7</p>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Stillwater Injury Law Group — Free Consultation • Available 24/7</p>
             <p>After an accident, most people aren't thinking about lawsuits. They're wondering how they'll pay their medical bills, whether they'll miss work, and what they're supposed to say when the insurance company calls.</p>
             <p>That's where we help. At Stillwater Injury Law Group, we help injured Oklahomans understand their options, deal with insurance companies, and pursue fair compensation without unnecessary stress or confusion.</p>
             <p>Whether your accident happened yesterday or several weeks ago, we'll explain where you stand and what comes next.</p>
@@ -717,7 +724,7 @@
           <div class="copy-block">
             <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <h4>Email 1 — Sent 1 hour after signup</h4>
-            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: What the insurance company won't tell you</p>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: What the insurance company won't tell you</p>
             <p>The first call from the insurance company often comes sooner than people expect. You're still dealing with vehicle damage, doctor's appointments, and figuring out what happens next. Then the insurance company calls.</p>
             <p>The adjuster may sound friendly and helpful. They might tell you they just need a quick recorded statement to move the claim forward. What they may not explain is that those statements can sometimes be used later to challenge or reduce your claim.</p>
             <p>One of the first things we tell clients is simple: let us handle the insurance company. You don't have to answer every question immediately, and you don't have to navigate the claims process alone. We handle the conversation so you don't accidentally say something that hurts your case.</p>
@@ -726,7 +733,7 @@
             <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
 
             <h4 style="margin-top:24px;">Email 2 — Sent 3 days later</h4>
-            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: Even "Small" Accidents Can Mean Real Money Left on the Table</p>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: Even "Small" Accidents Can Mean Real Money Left on the Table</p>
             <p>One of the biggest myths we hear: "My accident wasn't that bad. Hiring a lawyer would be overkill." But here's what we see all the time: someone has minor neck pain a week after a crash. They don't see a doctor because they assume it'll go away. Two months later, they're in physical therapy. The insurance company has already closed the claim. Now they're paying out of pocket.</p>
             <p>We're not here to scare you. We're here to help you avoid that situation. If your accident happened within the last 30 days—even if you feel okay right now—a short conversation with us costs nothing.</p>
             <p>We'll help you understand:</p>
@@ -740,7 +747,7 @@
             <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
 
             <h4 style="margin-top:24px;">Email 3 — Sent 7 days later</h4>
-            <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: One question we get asked every week</p>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: One question we get asked every week</p>
             <p>"How long do I have to file a claim?" It's one of the most common questions we hear after an accident. Most people know there's a deadline. What they don't realize is how quickly time starts working against them.</p>
             <p>Photos get lost. Witnesses forget details. Medical records become harder to gather. And the longer a claim drags on, the harder it can become to prove exactly what happened. In Oklahoma, most car accident claims must be filed within two years of the accident date. That may sound like plenty of time. But building a strong claim often starts long before that deadline arrives.</p>
             <p>If your accident happened within the last 18 months, now is a good time to make sure you understand where things stand. We're offering a free, no-obligation case timeline review. We'll help you understand:</p>
@@ -761,8 +768,69 @@
     </div>
 
 
+    <!-- SAMPLE 6 -->
+    <div class="sample" id="sample-deep-rubber" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">6 · Used Tires · Spanish-Only Voice</span>
+          <h3>Deep Rubber</h3>
+          <p>A used tire shop homepage, written entirely in Spanish for the audience it actually serves — playful, warm, and no English fallback.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <h4>DEEP RUBBER</h4>
+            <p style="font-style:italic; color:var(--ink-soft);">Necesitas llantas. No necesitas una segunda hipoteca.</p>
+            <p>Félix Zambrano lo entiende. Tiene 7 hijos, un hermano que duerme en la oficina de atrás, y una mamá en México que todavía le marca todas las noches para preguntarle si está comiendo bien.</p>
+            <p>No está aquí para venderte lo que no necesitas. Está aquí para que tu carro funcione.</p>
+
+            <h4 style="margin-top:20px;">Lo que hacemos de verdad:</h4>
+            <p>· Vendemos llantas usadas que todavía tienen vida—no basura que encontramos en una zanja<br>· Las montamos y balanceamos mientras esperas (ve por unos tacos, te llamamos)<br>· Parches por barato. Gratis si nos compraste y han pasado menos de 3 meses.<br>· Te decimos cuándo no necesitas llantas nuevas. Aunque nos cueste la venta.</p>
+
+            <h4 style="margin-top:20px;">Por qué vuelven:</h4>
+            <p>· Félix se acuerda de tu nombre. Y de tu carro. Te pregunta por tu hijo—el que juega fútbol—porque de verdad se acuerda.<br>· Los precios están en la pared. Nada de calculadora mágica en la caja.<br>· Si una llanta no sirve, te enseña por qué. Ahí mismo. Con el dedo señalando la rajadura.<br>· "¿Inglés o español?" pregunta. "¿Llantas?" ya sabe.</p>
+
+            <h4 style="margin-top:20px;">Lo que dicen los clientes:</h4>
+            <p>"Félix me disuadió de comprar 4 llantas. Solo necesitaba 2. Pudo haberme cobrado. No lo hizo." — Carlos R.</p>
+            <p>"Mi camioneta temblaba. La arregló en 20 minutos. Me cobró $15. Le di $20 y sentí que le robé." — Tamara K.</p>
+
+            <h4 style="margin-top:20px;">¿Qué tenemos en stock?</h4>
+            <p>La verdad? Cambia diario. Nos llegan llantas usadas por oleadas—unas de intercambios, otras de flotillas, otras de gente que cambió de carro y dejó caucho bueno.</p>
+            <p>Lo mejor que puedes hacer: Llámanos o mándanos un mensaje con tu medida. Félix sale al lote, revisa lo que tiene, y te dice en el momento.</p>
+            <p>Nada de inventario en la página web. Solo un señor con una linterna y 20 años de experiencia.</p>
+
+            <h4 style="margin-top:20px;">Conoce a Félix.</h4>
+            <p>Nacido en Jalisco. Metiéndole mano a los carros desde los 14. Abrió Deep Rubber en el 2008 porque se cansó de ver a la gente pagar precios locos por caucho que apenas era mejor que usado.</p>
+            <p>Su hermano Heriberto atiende el frente. Su hijo mayor—17 años, en la prepa—monta llantas después de la escuela. Está ahorrando para su propio carro. Félix le paga por debajo del agua y le dice que es "aprendizaje".</p>
+            <p>Su mamá todavía le da consejos de negocio desde 2,000 millas de distancia. Él le manda dinero todos los viernes. Ella le manda rezos. Así funciona. A veces le reclama que no come suficiente verdura. Él le dice que sí, aunque no sea cierto.</p>
+
+            <h4 style="margin-top:20px;">Ven a vernos.</h4>
+            <p>Estamos entre el OXXO y donde estaba la taquería. (QEPD, Chuy's. Te extrañamos.) Verás las pirámides de llantas.</p>
+            <p>Lunes–Viernes: 8–6<br>Sábado: 8–4<br>Domingo: Cerrado. Día familiar. Sin excepciones.</p>
+            <p>Llama: [teléfono]<br>Manda texto: [teléfono] – respondemos más rápido<br>Llega: [dirección]</p>
+            <p class="cta-line">→ No necesitas cita. La mayoría nomás llega y ya.</p>
+          </div>
+          <div class="annotation">
+            No English fallback, no translation crutch — this is written for a Spanish-speaking audience as the primary and only audience, not as a secondary version of an English page. The humor (the missed taco stand, the mom's nightly calls, "aprendizaje" as code for under-the-table pay) is culturally specific in a way a direct translation could never land. Proof of range beyond the trust-building service-business voice used elsewhere on this site.
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<hr class="rule">
+
+<section style="padding:56px 0; background:var(--paper-dim);">
+  <div class="wrap">
+    <p style="font-size:0.82rem; color:var(--ink-soft); text-align:center; max-width:640px; margin:0 auto;">This is a speculative portfolio project created to demonstrate website copywriting and brand messaging skills across audiences and languages. The businesses, testimonials, and contact information shown in every sample are fictional and used for portfolio purposes only.</p>
+  </div>
+</section>
+
 
 <section style="background:var(--navy); padding:40px 0;">
   <div class="wrap" style="text-align:center;">
@@ -975,6 +1043,16 @@
     document.removeEventListener('keydown', trapFocus);
     const trigger = document.getElementById('about-modal-trigger');
     if(trigger) trigger.focus();
+  }
+  function jumpToDeepRubber(e){
+    e.preventDefault();
+    const sample = document.getElementById('sample-deep-rubber');
+    if(!sample) return;
+    if(sample.getAttribute('data-open') !== 'true'){
+      const head = sample.querySelector('.sample-head');
+      toggleSample(head);
+    }
+    sample.scrollIntoView({behavior:'smooth', block:'start'});
   }
   function toggleSample(headEl){
     const sample = headEl.parentElement;
