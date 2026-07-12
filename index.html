@@ -801,13 +801,40 @@
   </div>
 </section>
 
+<hr class="rule">
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head"><span class="label">03 — How It Works</span></div>
+    <h2 style="margin-bottom:44px;">No guessing what hiring me looks like.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">Step 1</span>
+        <h3>Send the Brief</h3>
+        <p>Tell me what you need — a page, an email sequence, a full site. No formal brief required, a rough outline works fine.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 2</span>
+        <h3>I Ask Questions</h3>
+        <p>I'll ask what you're stuck on and what the client actually needs, so the first draft isn't a guess.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 3</span>
+        <h3>Draft, Then Revise</h3>
+        <p>You get a structured, ready-to-build draft. One round of revisions is included to get it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="wrap">
-    <span class="label">03 — Get In Touch</span>
+    <span class="label">04 — Get In Touch</span>
     <h2>Have a client that needs copy?</h2>
     <p>I work with design agencies as the writer they send that project to — one-off or ongoing. Send over a brief, or just say hello.</p>
     <div class="contact-links">
       <a class="btn btn-primary" href="mailto:angelwritescontent@gmail.com">Email Me</a>
+      <button class="btn btn-ghost" onclick="copyEmail(this)" style="cursor:pointer; font-family:'JetBrains Mono', monospace;" id="copy-email-btn">angelwritescontent@gmail.com</button>
     </div>
     <div class="footer-bottom">
       <span>Angel Sterling — Freelance Copywriter</span>
@@ -841,6 +868,17 @@
 </div>
 
 <script>
+  function copyEmail(btn){
+    const email = 'angelwritescontent@gmail.com';
+    navigator.clipboard.writeText(email).then(function(){
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 1800);
+    }).catch(function(){
+      const original = btn.textContent;
+      btn.textContent = email;
+    });
+  }
   function openAboutModal(e){
     if(e) e.preventDefault();
     document.getElementById('about-modal-overlay').style.display = 'block';
