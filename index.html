@@ -71,7 +71,7 @@
   .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;}
   .brand span{color:var(--gold);}
   nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0;}
-  nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft);}
+  nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft); padding:10px 2px; display:inline-block;}
   nav a:hover{color:var(--ink);}
   .navlinks{display:flex;}
   @media (max-width:640px){ .navlinks{display:none;} }
@@ -179,6 +179,13 @@
     font-size:0.98rem;
     position:relative;
   }
+  .copy-sample-btn{
+    position:absolute; top:14px; right:14px;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem;
+    padding:6px 12px; border:1px solid var(--rule); border-radius:2px;
+    background:var(--paper); color:var(--ink-soft); cursor:pointer;
+  }
+  .copy-sample-btn:hover{border-color:var(--gold); color:var(--gold);}
   .copy-block h4{font-family:'Fraunces',serif; font-size:1.15rem; font-weight:600; margin:0 0 12px;}
   .copy-block p{margin:0 0 14px; color:var(--ink);}
   .copy-block p:last-child{margin-bottom:0;}
@@ -255,7 +262,7 @@
     <ul class="navlinks">
       <li><a href="#work">My Writing</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#" onclick="openAboutModal(event)">About Angel</a></li>
+      <li><a href="#" id="about-modal-trigger" onclick="openAboutModal(event)">About Angel</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -308,6 +315,7 @@
       <div class="sample-body">
         <div class="sample-inner">
           <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <div class="lang-toggle">
               <button class="active" onclick="showVariant(this,'home')">Homepage</button>
               <button onclick="showVariant(this,'about')">About Us</button>
@@ -402,6 +410,7 @@
       <div class="sample-body">
         <div class="sample-inner">
           <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <div class="lang-toggle">
               <button class="active" onclick="showLang(this,'en')">EN</button>
               <button onclick="showLang(this,'es')">ES</button>
@@ -557,6 +566,7 @@
       <div class="sample-body">
         <div class="sample-inner">
           <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <div class="lang-toggle">
               <button class="active" onclick="showLang(this,'en')">EN</button>
               <button onclick="showLang(this,'es')">ES</button>
@@ -649,6 +659,7 @@
       <div class="sample-body">
         <div class="sample-inner">
           <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <h4>Personal Injury Representation Focused on People, Not Insurance Companies</h4>
             <p style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--ink-soft);">Stillwater Injury Law Group — Free Consultation • Available 24/7</p>
             <p>After an accident, most people aren't thinking about lawsuits. They're wondering how they'll pay their medical bills, whether they'll miss work, and what they're supposed to say when the insurance company calls.</p>
@@ -704,6 +715,7 @@
       <div class="sample-body">
         <div class="sample-inner">
           <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
             <h4>Email 1 — Sent 1 hour after signup</h4>
             <p style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">Subject: What the insurance company won't tell you</p>
             <p>The first call from the insurance company often comes sooner than people expect. You're still dealing with vehicle damage, doctor's appointments, and figuring out what happens next. Then the insurance company calls.</p>
@@ -762,9 +774,35 @@
 
 <hr class="rule">
 
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head"><span class="label">02 — How It Works</span></div>
+    <h2 style="margin-bottom:44px;">No guessing what hiring me looks like.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">Step 1</span>
+        <h3>Send the Brief</h3>
+        <p>Tell me what you need — a page, an email sequence, a full site. No formal brief required, a rough outline works fine.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 2</span>
+        <h3>I Ask Questions</h3>
+        <p>I'll ask what you're stuck on and what the client actually needs, so the first draft isn't a guess.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 3</span>
+        <h3>Draft, Then Revise</h3>
+        <p>First draft within 5 business days of our kickoff call. You get a structured, ready-to-build draft, plus one round of revisions included to get it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
 <section class="section" id="services">
   <div class="wrap">
-    <div class="section-head"><span class="label">02 — How I Can Help</span></div>
+    <div class="section-head"><span class="label">03 — How I Can Help</span></div>
     <h2 style="margin-bottom:44px;">Built to plug into an agency workflow.</h2>
     <div class="services-grid">
       <div class="service-card">
@@ -780,7 +818,7 @@
       <div class="service-card">
         <span class="label">Bilingual</span>
         <h3>English / Español</h3>
-        <p>Full native-parity copy in both languages — for clients serving bilingual communities or markets.</p>
+        <p>Full native-parity copy in English and Español — for clients serving bilingual communities or markets.</p>
       </div>
       <div class="service-card">
         <span class="label">SEO Content</span>
@@ -803,25 +841,30 @@
 
 <hr class="rule">
 
-<section class="section" id="process">
+<section class="section" id="faq">
   <div class="wrap">
-    <div class="section-head"><span class="label">03 — How It Works</span></div>
-    <h2 style="margin-bottom:44px;">No guessing what hiring me looks like.</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="label">Step 1</span>
-        <h3>Send the Brief</h3>
-        <p>Tell me what you need — a page, an email sequence, a full site. No formal brief required, a rough outline works fine.</p>
+    <div class="section-head"><span class="label">04 — FAQ</span></div>
+    <h2 style="margin-bottom:44px;">Questions agencies actually ask.</h2>
+    <div style="max-width:720px;">
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Do you work with agencies outside Oklahoma?</h3>
+        <p style="color:var(--ink-soft); margin:0;">Yes — I work with agencies all over the world. Everything is handled over email and call, same as any remote writer.</p>
       </div>
-      <div class="service-card">
-        <span class="label">Step 2</span>
-        <h3>I Ask Questions</h3>
-        <p>I'll ask what you're stuck on and what the client actually needs, so the first draft isn't a guess.</p>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">How do you handle bilingual projects?</h3>
+        <p style="color:var(--ink-soft); margin:0;">I write both languages natively, not as a translation pass. The Spanish version is written to persuade on its own terms — same voice, same structure, adapted where a direct translation would sound stiff.</p>
       </div>
-      <div class="service-card">
-        <span class="label">Step 3</span>
-        <h3>Draft, Then Revise</h3>
-        <p>You get a structured, ready-to-build draft. One round of revisions is included to get it right.</p>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">What's your revision policy?</h3>
+        <p style="color:var(--ink-soft); margin:0;">One round of revisions is included with every project. If something needs a bigger rework than that, we'll talk about it before any extra work starts — no surprise charges.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Can you match our client's voice?</h3>
+        <p style="color:var(--ink-soft); margin:0;">That's the job. I record calls with your client and pull the specifics from how they actually talk — the phrases they use, what they emphasize, what they'd never say — and write from that, not a generic template.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">What do you need from us to get started?</h3>
+        <p style="color:var(--ink-soft); margin:0;">A rough outline of the project and a short call. No formal creative brief required — I'll ask the questions I need answered.</p>
       </div>
     </div>
   </div>
@@ -829,7 +872,7 @@
 
 <footer id="contact">
   <div class="wrap">
-    <span class="label">04 — Get In Touch</span>
+    <span class="label">05 — Get In Touch</span>
     <h2>Have a client that needs copy?</h2>
     <p>I work with design agencies as the writer they send that project to — one-off or ongoing. Send over a brief, or just say hello.</p>
     <div class="contact-links">
@@ -843,10 +886,10 @@
   </div>
 </footer>
 
-<div id="about-modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(28,35,51,0.7); z-index:100; padding:24px;" onclick="if(event.target===this) closeAboutModal()">
-  <div style="max-width:640px; margin:40px auto; background:var(--paper); border-radius:2px; max-height:85vh; overflow-y:auto; position:relative; padding:40px 36px;">
-    <button onclick="closeAboutModal()" aria-label="Close" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.6rem; color:var(--ink-soft); cursor:pointer; line-height:1;">&times;</button>
-    <span class="label">About Angel</span>
+<div id="about-modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(28,35,51,0.7); z-index:100; padding:24px;" onclick="if(event.target===this) closeAboutModal()" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+  <div id="about-modal-box" style="max-width:640px; margin:40px auto; background:var(--paper); border-radius:2px; max-height:85vh; overflow-y:auto; position:relative; padding:40px 36px;" tabindex="-1">
+    <button id="about-modal-close" onclick="closeAboutModal()" aria-label="Close" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.6rem; color:var(--ink-soft); cursor:pointer; line-height:1;">&times;</button>
+    <span class="label" id="about-modal-title">About Angel</span>
     <p style="margin-top:18px;">I'm Angel Sterling. I've always done things myself.</p>
     <p>At 14, I started a painting business. Not because I loved painting — because I saw people needed work done and I figured I could do it better than whoever else they'd find.</p>
     <p>From there, I sold used cars. Learned fast that the sale happened in the questions, not the pitch. I sold siding and windows door-to-door in the heat. I learned that selling isn't about talking — it's about listening to what someone actually needs and showing them how you fit.</p>
@@ -868,6 +911,22 @@
 </div>
 
 <script>
+  function copySampleText(btn){
+    const block = btn.closest('.copy-block');
+    // Clone so we can strip the button itself and any hidden language variant before reading text
+    const clone = block.cloneNode(true);
+    const btnInClone = clone.querySelector('.copy-sample-btn');
+    if(btnInClone) btnInClone.remove();
+    clone.querySelectorAll('[style*="display:none"], [style*="display: none"]').forEach(el => el.remove());
+    const text = clone.innerText.trim();
+    navigator.clipboard.writeText(text).then(function(){
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 1800);
+    }).catch(function(){
+      console.error('Copy failed');
+    });
+  }
   function copyEmail(btn){
     const email = 'angelwritescontent@gmail.com';
     navigator.clipboard.writeText(email).then(function(){
@@ -879,14 +938,43 @@
       btn.textContent = email;
     });
   }
+  function getFocusable(container){
+    return Array.from(container.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])'))
+      .filter(el => !el.disabled && el.offsetParent !== null);
+  }
+  function trapFocus(e){
+    const box = document.getElementById('about-modal-box');
+    if(e.key === 'Escape'){
+      closeAboutModal();
+      return;
+    }
+    if(e.key !== 'Tab') return;
+    const focusable = getFocusable(box);
+    if(focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if(e.shiftKey && document.activeElement === first){
+      e.preventDefault();
+      last.focus();
+    } else if(!e.shiftKey && document.activeElement === last){
+      e.preventDefault();
+      first.focus();
+    }
+  }
   function openAboutModal(e){
     if(e) e.preventDefault();
     document.getElementById('about-modal-overlay').style.display = 'block';
     document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', trapFocus);
+    const box = document.getElementById('about-modal-box');
+    box.focus();
   }
   function closeAboutModal(){
     document.getElementById('about-modal-overlay').style.display = 'none';
     document.body.style.overflow = '';
+    document.removeEventListener('keydown', trapFocus);
+    const trigger = document.getElementById('about-modal-trigger');
+    if(trigger) trigger.focus();
   }
   function toggleSample(headEl){
     const sample = headEl.parentElement;
