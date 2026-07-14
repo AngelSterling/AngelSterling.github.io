@@ -63,6 +63,7 @@
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--rule);
   }
+  nav > .wrap{ position:relative; }
   nav .wrap{
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 28px;
@@ -74,7 +75,19 @@
   nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft); padding:10px 2px; display:inline-block;}
   nav a:hover{color:var(--ink);}
   .navlinks{display:flex;}
-  @media (max-width:640px){ .navlinks{display:none;} }
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:8px; flex-direction:column; gap:5px;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--ink);}
+  @media (max-width:640px){
+    .navlinks{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; background:var(--paper); border-bottom:1px solid var(--rule);
+      padding:8px 28px 16px; gap:2px;
+    }
+    .navlinks.open{display:flex;}
+    .navlinks li{border-top:1px solid var(--rule);}
+    .navlinks a{display:block; padding:14px 0;}
+    .nav-toggle{display:flex;}
+  }
 
   /* ---------- HERO ---------- */
   header.hero{padding:104px 0 88px; position:relative;}
@@ -266,11 +279,15 @@
   <div class="wrap">
     <div class="brand">Angel Sterling <span>/ copy</span></div>
     <ul class="navlinks">
-      <li><a href="#work">My Writing</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#work">My Writing</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#" id="about-modal-trigger" onclick="openAboutModal(event)">About Angel</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="nav-toggle-btn" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -966,8 +983,8 @@
     <p style="margin-top:18px;">I'm Angel Sterling. Here's a little about me.</p>
     <p>At 14, I started painting houses. Not because I loved painting — but because I saw people needed work done and I figured I could do it better than whoever else they'd find.</p>
     <p>From there, I sold used cars. Learned fast that the sale happened in the questions, not the pitch. I sold siding and windows door-to-door in the heat. And the cold. I learned that selling isn't about talking — it's about listening to what someone actually says. That tells you what they need.</p>
-    <p>I'm married to Laura. She grew up in Mérida, Mexico. She still corrects my Spanish. She keeps me honest.</p>
-    <p>We have two young daughters, 5 and 3. They're the reason you're reading this page.</p>
+    <p>I'm married to my beautiful wife Laura. I know that sounds cliché, but in this case it's true. She grew up in Mérida, Mexico. She still corrects my Spanish. She keeps me honest.</p>
+    <p>We have two young beautiful daughters, 5 and 3. That's not a cliché, that's just a fact. They're the reason you're reading this page.</p>
     <p>Somewhere along the way I found I could write, and I liked it. So now I write in English and Spanish. Not one translated from the other — both written to stand on their own.</p>
     <p>I usually deliver on Fridays. If I don't, you'll know why by Thursday.</p>
     <p>Tell me what you need. I'll write it.</p>
@@ -1058,6 +1075,20 @@
     document.querySelectorAll('.sample[data-open="true"]').forEach(function(sample){
       const body = sample.querySelector('.sample-body');
       body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
+  function toggleMobileNav(){
+    const nav = document.querySelector('.navlinks');
+    const btn = document.getElementById('nav-toggle-btn');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.addEventListener('click', function(){
+        document.querySelector('.navlinks').classList.remove('open');
+        document.getElementById('nav-toggle-btn').setAttribute('aria-expanded', 'false');
+      });
     });
   });
   function toggleSample(headEl){
