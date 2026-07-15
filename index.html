@@ -139,10 +139,12 @@
   .es-signpost{
     display:inline-block;
     font-size:0.95rem; font-family:'JetBrains Mono', monospace;
-    color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);
-    padding:4px 2px;
+    color:var(--gold); text-decoration:none;
+    border:1px solid var(--gold); border-radius:20px;
+    padding:6px 14px; cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease;
   }
-  .es-signpost:hover{color:var(--oxblood); border-color:var(--oxblood);}
+  .es-signpost:hover{background:var(--gold); color:var(--paper); border-color:var(--gold);}
 
   /* ---------- ABOUT ---------- */
   .about-grid{
@@ -295,7 +297,7 @@
 <header class="hero">
   <div class="wrap">
     <span class="label">Freelance Copywriter — Est. 2026</span>
-    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost" style="margin-left:14px;">→ Includes Spanish-only work</a>
+    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost" style="margin:10px 0 20px; color:var(--oxblood); border-color:var(--oxblood);"><strong style="font-size:1.6rem; vertical-align:-4px; line-height:0;">→</strong> Includes Spanish-only work</a>
     <h1>Words your <em>designs</em> deserve.</h1>
     <p class="sub">I write website copy, email sequences, and bilingual (EN/ES) content for the clients web design agencies build for — so your team can stay focused on design, not drafts.</p>
     <div class="hero-cta">
@@ -313,7 +315,7 @@
       <p style="color:rgba(245,242,234,0.7); margin-top:6px; font-size:0.95rem;">Currently available — actively taking on new client work, one-off or ongoing.</p>
     </div>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
-      <a class="btn btn-ghost" style="border-color:var(--gold); color:var(--paper);" href="#" onclick="openAboutModal(event)">Read My Story</a>
+      <a class="btn btn-ghost" style="border:2px solid var(--gold); background:rgba(168,121,42,0.18); color:var(--gold-bright); font-weight:700; font-size:0.92rem;" href="#" onclick="openAboutModal(event)">Read My Story</a>
       <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
     </div>
   </div>
@@ -366,8 +368,8 @@
   <div class="wrap">
     <div class="section-head"><span class="label">02 — My Writing</span></div>
     <h2 style="margin-bottom:8px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Seven samples. Seven different jobs the copy has to do.</h2>
-    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost">→ Includes Spanish-only work</a>
-    <p class="section-intro" style="margin-top:14px;">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
+    <p class="section-intro" style="margin-bottom:14px;">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
+    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost" style="margin-bottom:48px; display:inline-block; color:var(--oxblood); border-color:var(--oxblood);"><strong style="font-size:1.3em;">→</strong> Includes Spanish-only work</a>
 
     <!-- SAMPLE 1 -->
     <div class="sample" data-open="true">
