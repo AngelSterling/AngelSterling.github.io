@@ -137,9 +137,10 @@
   .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);}
   .section-intro{max-width:60ch; color:var(--ink-soft); margin-bottom:48px;}
   .es-signpost{
-    display:inline-block; margin-top:6px;
-    font-size:0.78rem; font-family:'JetBrains Mono', monospace;
+    display:inline-block;
+    font-size:0.95rem; font-family:'JetBrains Mono', monospace;
     color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);
+    padding:4px 2px;
   }
   .es-signpost:hover{color:var(--oxblood); border-color:var(--oxblood);}
 
@@ -294,6 +295,7 @@
 <header class="hero">
   <div class="wrap">
     <span class="label">Freelance Copywriter — Est. 2026</span>
+    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost" style="margin-left:14px;">→ Includes Spanish-only work</a>
     <h1>Words your <em>designs</em> deserve.</h1>
     <p class="sub">I write website copy, email sequences, and bilingual (EN/ES) content for the clients web design agencies build for — so your team can stay focused on design, not drafts.</p>
     <div class="hero-cta">
@@ -363,7 +365,7 @@
 <section class="section" id="work">
   <div class="wrap">
     <div class="section-head"><span class="label">02 — My Writing</span></div>
-    <h2 style="margin-bottom:6px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Six samples. Six different jobs the copy has to do.</h2>
+    <h2 style="margin-bottom:8px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Seven samples. Seven different jobs the copy has to do.</h2>
     <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost">→ Includes Spanish-only work</a>
     <p class="section-intro" style="margin-top:14px;">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
 
@@ -831,6 +833,164 @@
 
 
     <!-- SAMPLE 6 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">7 · Healthcare · Bilingual EN/ES</span>
+          <h3>Hart Dental</h3>
+          <p>A dental practice site built around patient anxiety — homepage, about page, and FAQ, full bilingual parity.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <div class="lang-toggle">
+              <button class="active" onclick="showLang(this,'en')">EN</button>
+              <button onclick="showLang(this,'es')">ES</button>
+            </div>
+            <div class="lang-en">
+            <h4>Haven't been to the dentist in years? We get it.</h4>
+            <p>When Dr. Hart was a kid, her dad had a terrible toothache. He sat at the kitchen table, holding his jaw, while her mother begged him to call. He wouldn't go. Too embarrassed. Too scared.</p>
+            <p>She never forgot that.</p>
+            <p>So when she opened Hart Dental, she made a promise: no judgment. No rushed exams. Just honest explanations, a gentle hand, and a team that remembers your name.</p>
+            <p>Thirteen years later, she's treated three generations of Dallas families. She's done over 8,000 cleanings. She still checks the gum line the same way her professors taught her.</p>
+            <p>She knows what she's doing. And she knows you're nervous. Both things can be true.</p>
+
+            <h4 style="margin-top:20px;">Your Visit, Your Pace</h4>
+            <p><strong>The chair reclines slowly — no sudden drop.</strong><br>Most chairs tilt back fast and catch you off guard. Ours don't. You're in control.</p>
+            <p><strong>You raise your hand, we stop. No questions asked.</strong><br>Nervous? Need a break? Just lift a finger. We pause immediately.</p>
+            <p><strong>Your hygienist tells you what she's doing before she does it.</strong><br>No surprises. Every step gets a heads-up.</p>
+            <p>"I hadn't been to the dentist in six years. Maria remembered my name. Dr. Hart didn't make me feel stupid. I'll be back in six months." — Dana, Dallas</p>
+
+            <h4 style="margin-top:20px;">Our Services</h4>
+            <p><strong>General & Restorative</strong><br>Exams, Cleanings & Digital X-rays · Oral Cancer Screenings · Fillings, Crowns & Bridges · Root Canals & Extractions · Dentures & Partials</p>
+            <p><strong>Cosmetic & Implants</strong><br>Teeth Whitening & Veneers · Smile Makeovers · Single Implants & Implant-Supported Dentures</p>
+            <p style="font-style:italic; color:var(--ink-soft);">Explore a specific service →</p>
+
+            <h4 style="margin-top:20px;">New Patients Welcome</h4>
+            <p>Most cleanings under $200. We explain every cost before we start.</p>
+            <p>Most insurance accepted. Payment plans available.</p>
+
+            <h4 style="margin-top:20px;">Meet Maria, Our Office Manager</h4>
+            <p>11 years with Dr. Hart. She knows your insurance before you hand her the card. She remembers your kids' names. She's the reason our lobby feels like a living room.</p>
+
+            <h4 style="margin-top:20px;">Schedule Your Visit</h4>
+            <p>Hart Dental<br>[Address], Dallas, TX<br>(214) 555-1234<br>[Book Online]</p>
+            <p><strong>Hours</strong><br>Mon–Fri: 8:00 AM – 5:00 PM<br>Sat: By appointment</p>
+            <p style="font-style:italic; color:var(--ink-soft);">New patient? Read our FAQ →</p>
+
+            <h4 style="margin-top:24px;">About Dr. Emily Hart</h4>
+            <p>Dr. Emily Hart grew up in Texas. She earned a full-ride academic scholarship to college and graduated valedictorian of her dental school class.</p>
+            <p>But her real education started long before that.</p>
+
+            <h4 style="margin-top:20px;">Why Dentistry</h4>
+            <p>When Dr. Hart was a child, her father had a terrible toothache. He sat at the kitchen table, holding his jaw, while her mother begged him to call. He wouldn't go. He was too afraid. So he lived with it.</p>
+            <p>She never forgot that.</p>
+            <p>When she opened her own practice, she made it a place where people like her father wouldn't be afraid to walk in. A place where patients are treated with honesty, patience, and a clear explanation of what's happening and why. No one feels judged for being nervous.</p>
+
+            <h4 style="margin-top:20px;">The Practice</h4>
+            <p>Dr. Hart works with a small, experienced team that's been with her for years. They know the patients. They remember the details. Every visit feels personal, not transactional.</p>
+            <p>She's been in Dallas for 13 years. She's treated three generations of some Dallas families. She's done over 8,000 cleanings, and she still checks the gum line the same way her professors taught her.</p>
+
+            <h4 style="margin-top:20px;">Credentials</h4>
+            <p>Valedictorian – Dental School · Full-Ride Academic Scholarship – Undergraduate · 13 Years in Private Practice · Member, American Dental Association · Member, Texas Dental Association</p>
+
+            <h4 style="margin-top:24px;">Frequently Asked Questions</h4>
+            <p><strong>I'm terrified of the dentist. What should I do?</strong><br>Call us. We'll schedule a "meet and greet"—no chair, no tools, just coffee and a conversation with Dr. Hart.</p>
+            <p><strong>How much does a cleaning cost without insurance?</strong><br>Most cleanings and exams are under $200. We'll give you a written estimate before we start.</p>
+            <p><strong>Do you take my insurance?</strong><br>We accept most PPO plans. Call us and we'll verify your benefits before your first visit.</p>
+            <p><strong>What happens at my first appointment?</strong><br>A gentle exam, digital X-rays, oral cancer screening, and a conversation about your smile goals. No pressure to book treatment that day.</p>
+            <p><strong>Do you offer sedation?</strong><br>Yes. Oral sedation and nitrous oxide (laughing gas) for patients who need help relaxing.</p>
+            <p><strong>What if I need a root canal or extraction?</strong><br>We do most procedures in-house. If we need a specialist, we refer you to someone we trust—and we stay in touch.</p>
+            <p><strong>Do you see children?</strong><br>Yes, patients of all ages are welcome. We make kids feel safe during their checkups.</p>
+            <p><strong>What if I have a dental emergency?</strong><br>Call immediately. We reserve same-day slots for emergencies.</p>
+            <p class="cta-line">→ Hart Dental — [Address] | (214) 555-1234 | [Book Online]</p>
+            </div>
+            <div class="lang-es" style="display:none;">
+            <h4>¿Llevas años sin ir al dentista? Te entendemos.</h4>
+            <p>Cuando la Dra. Hart era niña, su papá tuvo un dolor de muela horrible. Se quedaba sentado en la cocina, agarrándose la mandíbula, mientras su mamá le rogaba que llamara al dentista. No quería ir. Le daba vergüenza. Le daba miedo.</p>
+            <p>Ella nunca olvidó esa imagen.</p>
+            <p>Por eso, cuando abrió su propia clínica, hizo una promesa: aquí no juzgamos. No te apuramos. Solo te explicamos todo con claridad, te tratamos con calma y tenemos un equipo que se aprende tu nombre.</p>
+            <p>Trece años después, ha atendido a tres generaciones de familias en Dallas. Ha hecho más de 8,000 limpiezas. Y todavía revisa la línea de las encías como le enseñaron en la facultad.</p>
+            <p>Sabe lo que hace. Y sabe que tú estás nervioso. Las dos cosas pueden ser ciertas.</p>
+
+            <h4 style="margin-top:20px;">Tu Visita, Tu Ritmo</h4>
+            <p><strong>El sillón se reclina despacio — sin caídas bruscas.</strong><br>La mayoría de los sillones se echan hacia atrás de golpe y te desorientan. Los nuestros no. Tú llevas el control.</p>
+            <p><strong>Levantas la mano, paramos. Sin preguntas.</strong><br>¿Nervioso? ¿Necesitas un momento? Solo levanta un dedo. Paramos al instante.</p>
+            <p><strong>Tu higienista te dice lo que va a hacer antes de hacerlo.</strong><br>Nada de sorpresas. Cada paso te lo avisamos.</p>
+
+            <h4 style="margin-top:20px;">Lo que dicen nuestros pacientes:</h4>
+            <p>"Llevaba seis años sin ir al dentista. María se acordó de mi nombre. La Dra. Hart no me hizo sentir tonta. Voy a volver en seis meses." — Dana, Dallas</p>
+            <p>"Mi hijo siempre lloraba en el dentista. Aquí salió sonriendo." — Miguel, Oak Cliff</p>
+            <p>"Me daban hasta pánico las agujas. La Dra. Hart me explicó todo, paso a paso, y ni sentí la anestesia." — Rosa, East Dallas</p>
+            <p style="font-style:italic; color:var(--ink-soft); font-size:0.85rem;">Testimonios de pacientes reales. Resultados individuales pueden variar.</p>
+
+            <h4 style="margin-top:20px;">Nuestros Servicios</h4>
+            <p><strong>Odontología General y Restauradora</strong><br>Exámenes, Limpiezas y Radiografías Digitales → [Agenda tu limpieza]<br>Detección de Cáncer Oral → [Más información]<br>Empastes, Coronas y Puentes → [Ver opciones]<br>Endodoncias y Extracciones → [Conoce el proceso]<br>Dentaduras y Parciales → [Explora soluciones]</p>
+            <p><strong>Odontología Estética e Implantes</strong><br>Blanqueamiento Dental y Carillas → [Sonríe con confianza]<br>Rehabilitación de Sonrisa → [Transforma tu sonrisa]<br>Implantes Individuales y Dentaduras Sobre Implantes → [Recupera tu sonrisa]</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Explora todos nuestros servicios →]</p>
+
+            <h4 style="margin-top:20px;">Nuevos Pacientes Bienvenidos</h4>
+            <p>La mayoría de las limpiezas cuestan entre $150 y $200. Te explicamos cada costo antes de empezar.</p>
+            <p>Aceptamos la mayoría de seguros. Planes de pago disponibles.</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Información para nuevos pacientes →] | [Preguntas sobre seguros →] | [Opciones de pago →]</p>
+
+            <h4 style="margin-top:20px;">Conoce a Nuestro Equipo</h4>
+            <p><strong>María — Gerente de Oficina</strong><br>11 años con la Dra. Hart. Sabe navegar tu seguro antes de que termines de sacar la tarjeta. Se acuerda de los nombres de tus hijos. Ella es la razón por la que nuestra sala de espera se siente como una sala de estar.</p>
+            <p><strong>Ana — Higienista Dental</strong><br>9 años en la clínica. Tiene una mano tan suave que muchos pacientes se quedan dormidos durante las limpiezas. Habla español e inglés.</p>
+            <p><strong>Carlos — Asistente Dental</strong><br>7 años con el equipo. Es el que tiene las manos más firmes y la sonrisa más tranquila. Siempre está un paso adelante para que todo salga sin contratiempos.</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Conoce al equipo completo →]</p>
+
+            <h4 style="margin-top:20px;">Agenda tu Cita</h4>
+            <p>Hart Dental<br>[Dirección], Dallas, TX<br>(214) 555-1234<br>[Enlace para Agendar]</p>
+            <p><strong>Horario</strong><br>Lun–Vie: 8:00 AM – 5:00 PM<br>Sáb: Con cita previa</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Agenda tu cita en línea →] | [Llama ahora →] | [Horario y ubicación →]</p>
+            <p style="font-style:italic; color:var(--ink-soft);">¿Nuevo paciente? [Lee nuestras Preguntas Frecuentes →]<br>¿Quieres saber más sobre un tratamiento? [Explora nuestros servicios →]<br>¿Listo para agendar? [Reserva tu cita aquí →]<br>Conoce a la doctora: [Sobre la Dra. Hart →]</p>
+
+            <h4 style="margin-top:24px;">Sobre la Dra. Emily Hart</h4>
+            <p>La Dra. Emily Hart creció en Texas. Obtuvo una beca académica completa para la universidad y se graduó como la mejor de su clase en la facultad de odontología.</p>
+            <p>Pero su verdadera educación comenzó mucho antes.</p>
+
+            <h4 style="margin-top:20px;">Por qué Odontología</h4>
+            <p>Cuando la Dra. Hart era niña, su papá tuvo un dolor de muela horrible. Se quedaba sentado en la cocina, agarrándose la mandíbula, mientras su mamá le rogaba que llamara al dentista. No quería ir. Le tenía demasiado miedo. Así que aguantó el dolor.</p>
+            <p>Ella nunca olvidó eso.</p>
+            <p>Cuando abrió su propia clínica, hizo que fuera un lugar donde la gente como su papá no tuviera miedo de entrar. Un lugar donde los pacientes reciben un trato honesto, con paciencia y con explicaciones claras de lo que está pasando y por qué. Nadie se siente juzgado por estar nervioso.</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Agenda una cita para conocernos →]</p>
+
+            <h4 style="margin-top:20px;">La Clínica</h4>
+            <p>La Dra. Hart trabaja con un equipo pequeño y experimentado que lleva años con ella. Conocen a los pacientes. Recuerdan los detalles. Cada visita se siente personal, no como un trámite.</p>
+            <p>Lleva 13 años en Dallas. Ha atendido a tres generaciones de algunas familias de Dallas. Ha hecho más de 8,000 limpiezas, y todavía revisa la línea de las encías como le enseñaron sus profesores.</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Conoce a nuestro equipo →] | [Lee testimonios de pacientes →]</p>
+
+            <h4 style="margin-top:20px;">Credenciales</h4>
+            <p>Mejor Graduada – Facultad de Odontología · Beca Académica Completa – Universidad · 13 Años de Experiencia Privada · Miembro, Asociación Dental Americana · Miembro, Asociación Dental de Texas</p>
+            <p style="font-style:italic; color:var(--ink-soft);">[Ver más credenciales →] | [Sobre la práctica →]</p>
+
+            <h4 style="margin-top:24px;">Preguntas Frecuentes</h4>
+            <p><strong>Me da pánico ir al dentista. ¿Qué hago?</strong><br>Llámanos. Te agendamos una "cita para conocernos" — sin sillón, sin herramientas, solo café y una conversación con la Dra. Hart. [Agenda tu cita para conocernos →]</p>
+            <p><strong>¿Cuánto cuesta una limpieza sin seguro?</strong><br>La mayoría de las limpiezas y exámenes cuestan entre $150 y $200. Te damos un presupuesto por escrito antes de empezar, sin cargos ocultos. [Ver precios y planes de pago →]</p>
+            <p><strong>¿Aceptan mi seguro?</strong><br>Aceptamos la mayoría de los planes PPO. Llámanos y verificamos tu cobertura antes de tu primera cita. También ofrecemos descuentos para pacientes sin seguro. [Verificación de seguro →] | [Descuentos sin seguro →]</p>
+            <p><strong>¿Qué pasa en mi primera cita?</strong><br>Un examen suave, radiografías digitales (con baja radiación), detección de cáncer oral y una conversación sobre lo que quieres para tu sonrisa. Sin presión para agendar tratamiento ese mismo día. [Guía para tu primera visita →] | [Agenda tu primera cita →]</p>
+            <p><strong>¿Ofrecen sedación?</strong><br>Sí. Ofrecemos sedación oral y óxido nitroso (gas de la risa) para pacientes que necesitan ayuda para relajarse. Habla con nosotros antes de tu cita para ver cuál opción es mejor para ti. [Opciones de sedación →] | [Pregunta por la sedación →]</p>
+            <p><strong>¿Qué pasa si necesito una endodoncia o extracción?</strong><br>Hacemos la mayoría de los procedimientos aquí mismo. Si necesitas un especialista, te referimos a alguien de confianza—y nos mantenemos en contacto para asegurarnos de que estés cómodo. [Servicios restaurativos →] | [Referencias a especialistas →]</p>
+            <p><strong>¿Atienden niños?</strong><br>Sí, pacientes de todas las edades son bienvenidos. Hacemos que los niños se sientan seguros durante sus chequeos. Muchos padres nos dicen que sus hijos piden volver. [Odontología pediátrica →] | [Consejos para padres →]</p>
+            <p><strong>¿Qué hago si tengo una emergencia dental?</strong><br>Llama de inmediato al (214) 555-1234. Tenemos horarios reservados para emergencias el mismo día. Si llamas fuera del horario de atención, sigue las instrucciones de nuestro mensaje de voz para comunicarte con la doctora. [Emergencias dentales →] | [Contacto de emergencia →]</p>
+            <p><strong>¿Cuánto tiempo dura una cita normal?</strong><br>Una limpieza y examen típicos duran entre 45 minutos y una hora. Las citas más complejas pueden ser más largas, pero siempre te avisamos con anticipación. [Agenda tu cita →] | [Prepara tu visita →]</p>
+            <p><strong>¿Necesito llegar temprano para mi primera cita?</strong><br>Llega 10 minutos antes para llenar los formularios. O puedes descargarlos desde nuestra página web y traerlos ya completos. [Descarga formularios →] | [Primera visita →]</p>
+
+            <p class="cta-line">→ Hart Dental — [Dirección] | (214) 555-1234 | [Agenda tu Cita]</p>
+            <p style="font-style:italic; color:var(--ink-soft); font-size:0.85rem;">[Inicio] | [Servicios] | [Sobre Nosotros] | [FAQ] | [Contacto] | [Agendar Cita]</p>
+            </div>
+          </div>
+          <div class="annotation">
+            A new vertical — healthcare — using the same core technique as Noble Tree Care's oak story: one specific childhood memory (the kitchen-table toothache) doing the trust-building work a list of credentials never could. The Spanish version goes further than a direct translation: extra named team members (Ana, Carlos), extra testimonials, and a full internal-linking pattern throughout — showing SEO/UX thinking specific to how a bilingual clinic site would actually be built and browsed.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SAMPLE 7 -->
     <div class="sample" id="sample-deep-rubber" data-open="false">
       <div class="sample-head" onclick="toggleSample(this)">
         <div class="sample-head-left">
@@ -881,6 +1041,7 @@
         </div>
       </div>
     </div>
+
 
   </div>
 </section>
